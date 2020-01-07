@@ -1,14 +1,15 @@
 import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faColumns } from '@fortawesome/free-solid-svg-icons'
+import { faHome } from '@fortawesome/free-solid-svg-icons'
+import { faTrello } from '@fortawesome/free-brands-svg-icons'
 
 
 const Session = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
         <div className="session-nav">
             <div className="session-logo">
-                <FontAwesomeIcon icon={faColumns} className="logo" />
+                <FontAwesomeIcon icon={faTrello} className="logo" />
                 <span>R2DToDo</span>
             </div>
             <nav className="session-links-nav">
@@ -19,8 +20,16 @@ const Session = ({ currentUser, logout, openModal }) => {
     );
     const welcomeSession = () => (
         <hgroup className="header-group">
-            <button className="header-button" onClick={logout}>Log Out</button>
-            <h2 className="header-name">Hi, {currentUser.username}!</h2>
+            <FontAwesomeIcon icon={faHome} className="logo-home" />
+            <div className="header-logo-box">
+                <FontAwesomeIcon icon={faTrello} className="logo" />
+                <span>R2DToDo</span>
+            </div>
+            <div className="header-session-box">
+                <h2 className="header-name">{currentUser.username}</h2>
+                <button className="header-button" onClick={logout}>Log Out</button>
+            </div>
+
         </hgroup>
     );
 

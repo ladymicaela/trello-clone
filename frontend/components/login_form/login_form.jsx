@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faColumns } from '@fortawesome/free-solid-svg-icons'
+import { faTrello } from '@fortawesome/free-brands-svg-icons'
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     <div className="login-form-box-header">
-                        <FontAwesomeIcon icon={faColumns} className="logo-alt" />
+                        <FontAwesomeIcon icon={faTrello} className="logo-alt" />
                         <h3>R2DToDo</h3>
                     </div>
                     <hr />

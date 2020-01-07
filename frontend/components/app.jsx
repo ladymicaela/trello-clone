@@ -5,8 +5,8 @@ import { Route, Redirect, Switch, Link, HashRouter } from 'react-router-dom';
 import {AuthRoute} from '../util/route_util';
 
 import SessionContainer from './session/session_container';
-import SignUpFormContainer from './user_form/signup_form_container';
-import LogInFormContainer from './session_form/login_form_container';
+import SignUpFormContainer from './signup_form/signup_form_container';
+import LogInFormContainer from './login_form/login_form_container';
 
 import Modal from './modal/modal';
 

@@ -15,4 +15,6 @@
 
  @import './reset.css';
  @import './app.css';
+ @import './modal.css';
  @import './session.css';
+

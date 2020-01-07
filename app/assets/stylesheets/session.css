@@ -51,7 +51,9 @@
     margin: 5px;
     cursor: pointer;
     display: flex;
+    outline: none;
 };
+
 
 
 

@@ -8,11 +8,11 @@ import SessionContainer from './session/session_container';
 import SignUpFormContainer from './user_form/signup_form_container';
 import LogInFormContainer from './session_form/login_form_container';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faColumns } from '@fortawesome/free-solid-svg-icons'
+import Modal from './modal/modal';
 
 const App = () => (
     <div>
+        <Modal />
         <header>
             <SessionContainer />
         </header>

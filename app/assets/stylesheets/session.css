@@ -64,7 +64,6 @@ header {
     text-align: center;
     align-items: center;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;;
     padding-right: 5px
 }
@@ -91,9 +90,9 @@ header {
 
 .login-signup {
     text-align: center;
-    padding: 14px 16px;
+    padding: 10px 12px;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     border: solid 1px black;
     border-radius: 10px;
     background-color: #ddd;

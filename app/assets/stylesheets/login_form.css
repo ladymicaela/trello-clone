@@ -66,6 +66,10 @@
   border: goldenrod solid 3px;
 }
 
+.login-submit:hover {
+    background-color: goldenrod;
+}
+
 .login-password, .login-email {
     width: 100%;
     outline: none;

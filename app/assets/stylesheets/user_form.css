@@ -69,6 +69,10 @@
   border: goldenrod solid 3px;
 }
 
+.signup-submit:hover {
+    background-color: goldenrod;
+}
+
 .signup-password, .signup-email, .signup-username {
     width: 100%;
     outline: none;

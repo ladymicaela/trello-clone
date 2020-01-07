@@ -6,12 +6,12 @@ import { faColumns } from '@fortawesome/free-solid-svg-icons'
 
 const Session = ({ currentUser, logout, openModal }) => {
     const sessionLinks = () => (
-        <div className="sessionNav">
-            <div className="sessionLogo">
+        <div className="session-nav">
+            <div className="session-logo">
                 <FontAwesomeIcon icon={faColumns} className="logo" />
                 <span>R2DToDo</span>
             </div>
-            <nav className="sessionLinksNav">
+            <nav className="session-links-nav">
                 <button className="login-signup" onClick={() => openModal('login')}>Login</button>
                 <button className="login-signup" onClick={() => openModal('signup')}>Signup</button>
             </nav>

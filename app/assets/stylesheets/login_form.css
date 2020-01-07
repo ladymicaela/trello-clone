@@ -1,0 +1,80 @@
+.errors-login {
+    min-height: 20px;
+    color: blue;
+}
+
+.errors-login ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    line-height: 25px;
+}
+
+.logo-alt {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.login-form-box hr {
+    border: 2px solid goldenrod;
+    width: 200px;
+}
+
+.login-form-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form-box-header {
+    text-align: center;
+    margin-top: 20px;
+    align-items: center;
+    font-family: Impact, fantasy;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-submit {
+    border: none;
+    padding: 10px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border: 3px solid #ddd;
+}
+
+.login-submit:hover, .login-password:hover, .login-email:hover {
+  border: goldenrod solid 3px;
+}
+
+.login-password, .login-email {
+    width: 100%;
+    outline: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border: 3px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.login-password:focus , .login-email:focus {
+  border: 3px solid goldenrod;
+}

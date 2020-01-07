@@ -44,27 +44,28 @@ class SessionForm extends React.Component {
                         <FontAwesomeIcon icon={faColumns} className="logo-alt" />
                         <h3>R2DToDo</h3>
                     </div>
+                    <hr />
                     <br />
-                    {this.renderErrors()}
+                    <div className="errors-login">
+                        {this.renderErrors()}
+                    </div>
                     <div className="login-form">
                         <br />
-                        <label>Email:
                             <input type="text"
                                 value={this.state.email}
+                                placeholder="email"
                                 onChange={this.update('email')}
-                                className="login-input"
+                                className="login-email"
                             />
-                        </label>
                         <br />
-                        <label>Password:
                             <input type="password"
                                 value={this.state.password}
+                                placeholder="password"
                                 onChange={this.update('password')}
-                                className="login-input"
+                                className="login-password"
                             />
-                        </label>
                             <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <input className="login-submit" type="submit" value={this.props.formType} />
                     </div>
                 </form>
             </div>

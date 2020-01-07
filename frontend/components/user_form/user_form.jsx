@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faColumns } from '@fortawesome/free-solid-svg-icons'
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -37,39 +39,41 @@ class SessionForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to R2DToDo!
-          <br />
-                    Please {this.props.formType} or {this.props.navLink}
-                    {this.renderErrors()}
-                    <div className="login-form">
+            <div className="signup-form-container">
+                <form onSubmit={this.handleSubmit} className="signup-form-box">
+                    <div className="login-form-box-header">
+                        <FontAwesomeIcon icon={faColumns} className="logo-alt" />
+                        <h3>R2DToDo</h3>
+                    </div>
+                    <hr/>
+                    <br/>
+                    <div className="errors-signup">
+                        {this.renderErrors()}
+                    </div>
+                    <div className="signup-form">
                         <br />
-                        <label>Username:
-              <input type="text"
+                            <input type="text"
                                 value={this.state.username}
+                                placeholder="username"
                                 onChange={this.update('username')}
-                                className="login-input"
+                                className="signup-username"
                             />
-                        </label>
                         <br />
-                        <label>Email:
-              <input type="email"
+                            <input type="email"
                                 value={this.state.email}
+                                placeholder="email"
                                 onChange={this.update('email')}
-                                className="login-input"
+                                className="signup-email"
                             />
-                        </label>
                         <br />
-                        <label>Password:
-              <input type="password"
+                            <input type="password"
                                 value={this.state.password}
+                                placeholder="password"
                                 onChange={this.update('password')}
-                                className="login-input"
+                                className="signup-password"
                             />
-                        </label>
                         <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <input className="signup-submit" type="submit" value={this.props.formType} />
                     </div>
                 </form>
             </div>

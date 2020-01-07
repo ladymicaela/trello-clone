@@ -1,0 +1,58 @@
+.sessionNav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.logo {
+    color: #ddd;
+    text-align: center;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+    display: flex;
+}
+
+.sessionLogo {
+    color: #ddd;
+    display: flex;
+    align-items: center;
+    font-family: Impact, fantasy;
+    font-size: 30px;
+}
+
+.sessionLinksNav {
+    display: flex;
+}
+
+.header-group {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.header-name {
+    background-color: white;
+}
+
+.login-signup, .header-button {
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 15px;
+    border: solid 1px black;
+    border-radius: 10px;
+    background-color: #ddd;
+    color: black;
+    font-weight: bold;
+    margin: 5px;
+    cursor: pointer;
+    display: flex;
+};
+
+
+
+

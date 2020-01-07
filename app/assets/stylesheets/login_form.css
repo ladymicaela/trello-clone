@@ -58,7 +58,8 @@
     outline: none;
     -webkit-transition: 0.5s;
     transition: 0.5s;
-    border: 3px solid #ddd;
+    border: 3px solid darkgrey;
+    background-color: darkgrey;
 }
 
 .login-submit:hover, .login-password:hover, .login-email:hover {
@@ -73,6 +74,7 @@
     border: 3px solid #ddd;
     padding: 10px;
     border-radius: 10px;
+    border: 3px solid darkgrey;
 }
 
 .login-password:focus , .login-email:focus {

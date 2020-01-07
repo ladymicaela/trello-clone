@@ -4,7 +4,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   z-index: 11;
 }
 
@@ -13,4 +13,11 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  border: black solid 1px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  background-color: #ddd;
+  border-radius: 10px;
 }

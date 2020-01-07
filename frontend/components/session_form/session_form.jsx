@@ -1,4 +1,6 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faColumns } from '@fortawesome/free-solid-svg-icons'
 
 class SessionForm extends React.Component {
     constructor(props) {
@@ -38,14 +40,16 @@ class SessionForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Welcome to R2DToDo!
-          <br />
-                    Please {this.props.formType} or {this.props.navLink}
+                    <div className="login-form-box-header">
+                        <FontAwesomeIcon icon={faColumns} className="logo-alt" />
+                        <h3>R2DToDo</h3>
+                    </div>
+                    <br />
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
                         <label>Email:
-              <input type="text"
+                            <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="login-input"
@@ -53,13 +57,13 @@ class SessionForm extends React.Component {
                         </label>
                         <br />
                         <label>Password:
-              <input type="password"
+                            <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
                             />
                         </label>
-                        <br />
+                            <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
                 </form>

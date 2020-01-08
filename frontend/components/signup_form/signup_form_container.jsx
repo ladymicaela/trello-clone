@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { signup } from '../../actions/session_actions';
-import UserForm from './signup_form';
+import SignupForm from './signup_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 
@@ -24,4 +24,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

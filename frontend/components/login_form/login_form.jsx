@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.loginDemo = this.loginDemo.bind(this);
+        this.submitDemo = this.submitDemo.bind(this);
     }
 
     update(field) {
@@ -26,24 +27,35 @@ class LoginForm extends React.Component {
     }
 
     loginDemo(e) {
-        this.demoUser();
+        // this.demoUser();
+        e.preventDefault();
+        setTimeout(submitDemo(demoUser), 3000)
+        
+        let demoUser = {
+            email: "DinDjarin@mandalorian.com",
+            password: "password"
+        }
+        this.setState(demoUser)
         let emailInput = document.getElementById('email-input');
         let passwordInput = document.getElementById('password-input');
         emailInput.classList.add('typewriter');
         passwordInput.classList.add('typewriter');
-        e.preventDefault();
-    
-        // this.props.action(this.state).then(this.props.closeModal)
+        
+        // this.props.action(user).then(this.props.closeModal)
     }
 
-    demoUser() {
-        this.setState(
-            {
-                email: "DinDjarin@mandalorian.com",
-                password: "password"
-            }
-        )
-    };
+    submitDemo(demoUser) {
+        this.props.action(demoUser).then(this.props.closeModal)
+    }
+
+    // demoUser() {
+    //     this.setState(
+    //         {
+    //             email: "DinDjarin@mandalorian.com",
+    //             password: "password"
+    //         }
+    //     )
+    // };
 
 
     renderErrors() {

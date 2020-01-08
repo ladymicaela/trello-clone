@@ -46,7 +46,7 @@
     align-items: center;
 }
 
-.login-submit {
+.login-submit, .demo-login {
     border: none;
     padding: 10px 32px;
     text-decoration: none;
@@ -62,11 +62,11 @@
     background-color: darkgrey;
 }
 
-.login-submit:hover, .login-password:hover, .login-email:hover {
+.login-submit:hover, .demo-login:hover, .login-password:hover, .login-email:hover {
   border: goldenrod solid 3px;
 }
 
-.login-submit:hover {
+.login-submit:hover, .demo-login:hover {
     background-color: goldenrod;
 }
 

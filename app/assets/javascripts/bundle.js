@@ -119,7 +119,7 @@ var closeModal = function closeModal() {
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, signup, login, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, RECEIVE_DEMO_USER, receiveCurrentUser, logoutCurrentUser, receiveErrors, receiveDemoUser, signup, login, logout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -127,9 +127,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CURRENT_USER", function() { return RECEIVE_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_CURRENT_USER", function() { return LOGOUT_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SESSION_ERRORS", function() { return RECEIVE_SESSION_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_DEMO_USER", function() { return RECEIVE_DEMO_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCurrentUser", function() { return receiveCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveDemoUser", function() { return receiveDemoUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
@@ -138,6 +140,7 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+var RECEIVE_DEMO_USER = 'RECEIVE_DEMO_USER';
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -153,6 +156,11 @@ var receiveErrors = function receiveErrors(errors) {
   return {
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
+  };
+};
+var receiveDemoUser = function receiveDemoUser() {
+  return {
+    type: RECEIVE_DEMO_USER
   };
 };
 var signup = function signup(user) {
@@ -224,177 +232,14 @@ var App = function App() {
 
 /***/ }),
 
-/***/ "./frontend/components/login_form/login_form.jsx":
-/*!*******************************************************!*\
-  !*** ./frontend/components/login_form/login_form.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/react-fontawesome */ "./node_modules/@fortawesome/react-fontawesome/index.es.js");
-/* harmony import */ var _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fortawesome/free-brands-svg-icons */ "./node_modules/@fortawesome/free-brands-svg-icons/index.es.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-
-var LoginForm =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(LoginForm, _React$Component);
-
-  function LoginForm(props) {
-    var _this;
-
-    _classCallCheck(this, LoginForm);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(LoginForm).call(this, props));
-    _this.state = {
-      email: '',
-      password: ''
-    };
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(LoginForm, [{
-    key: "update",
-    value: function update(field) {
-      var _this2 = this;
-
-      return function (e) {
-        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
-      };
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault();
-      var user = Object.assign({}, this.state);
-      this.props.action(user).then(this.props.closeModal);
-    }
-  }, {
-    key: "renderErrors",
-    value: function renderErrors() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.errors.map(function (error, i) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i)
-        }, error);
-      }));
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-form-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit,
-        className: "login-form-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-form-box-header"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fortawesome_react_fontawesome__WEBPACK_IMPORTED_MODULE_1__["FontAwesomeIcon"], {
-        icon: _fortawesome_free_brands_svg_icons__WEBPACK_IMPORTED_MODULE_2__["faTrello"],
-        className: "logo-alt"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "R2DToDo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "errors-login"
-      }, this.renderErrors()), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login-form"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.email,
-        placeholder: "email",
-        onChange: this.update('email'),
-        className: "login-email"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "password",
-        value: this.state.password,
-        placeholder: "password",
-        onChange: this.update('password'),
-        className: "login-password"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "login-submit",
-        type: "submit",
-        value: this.props.formType
-      }))));
-    }
-  }]);
-
-  return LoginForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (LoginForm);
-
-/***/ }),
-
 /***/ "./frontend/components/login_form/login_form_container.jsx":
 /*!*****************************************************************!*\
   !*** ./frontend/components/login_form/login_form_container.jsx ***!
   \*****************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _login_form__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login_form */ "./frontend/components/login_form/login_form.jsx");
-/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-
-
-
-
-
-
-var mapStateToProps = function mapStateToProps(_ref) {
-  var errors = _ref.errors;
-  return {
-    errors: errors.session,
-    formType: 'login'
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    action: function action(user) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
-    },
-    otherForm: react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("button", {
-      onClick: function onClick() {
-        return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["openModal"])('signup'));
-      }
-    }, "Sign Up"),
-    closeModal: function closeModal() {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_login_form__WEBPACK_IMPORTED_MODULE_3__["default"]));
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/micaela/Desktop/trello-clone/R2DToDo/frontend/components/login_form/login_form_container.jsx: Identifier 'login' has already been declared (5:9)\n\n\u001b[0m \u001b[90m 3 | \u001b[39m\u001b[36mimport\u001b[39m { login } from \u001b[32m'../../actions/session_actions'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 | \u001b[39m\u001b[36mimport\u001b[39m \u001b[33mLoginForm\u001b[39m from \u001b[32m'./login_form'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 5 | \u001b[39m\u001b[36mimport\u001b[39m { login\u001b[33m,\u001b[39m receiveDemoUser } from \u001b[32m'../../actions/session_actions'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   | \u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 6 | \u001b[39m\u001b[36mimport\u001b[39m { openModal\u001b[33m,\u001b[39m closeModal } from \u001b[32m'../../actions/modal_actions'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 7 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 8 | \u001b[39m\u001b[36mconst\u001b[39m mapStateToProps \u001b[33m=\u001b[39m ({ errors }) \u001b[33m=>\u001b[39m {\u001b[0m\n    at Object.raise (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:7012:17)\n    at ScopeHandler.checkRedeclarationInScope (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:4288:12)\n    at ScopeHandler.declareName (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:4254:12)\n    at Object.checkLVal (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:8852:22)\n    at Object.parseImportSpecifier (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:12103:10)\n    at Object.parseNamedImportSpecifiers (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:12088:12)\n    at Object.parseImport (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:12027:39)\n    at Object.parseStatementContent (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:10788:27)\n    at Object.parseStatement (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:10690:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:11266:25)\n    at Object.parseBlockBody (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:11253:10)\n    at Object.parseTopLevel (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:10621:10)\n    at Object.parse (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:12131:10)\n    at parse (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/parser/lib/index.js:12182:38)\n    at parser (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/core/lib/transformation/normalize-file.js:187:34)\n    at normalizeFile (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/core/lib/transformation/normalize-file.js:113:11)\n    at runSync (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/core/lib/transformation/index.js:44:43)\n    at runAsync (/Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/core/lib/transformation/index.js:35:14)\n    at /Users/micaela/Desktop/trello-clone/R2DToDo/node_modules/@babel/core/lib/transform.js:34:34\n    at processTicksAndRejections (internal/process/task_queues.js:75:11)");
 
 /***/ }),
 

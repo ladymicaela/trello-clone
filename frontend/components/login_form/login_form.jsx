@@ -10,7 +10,8 @@ class LoginForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemo = this.handleDemo.bind(this);
+        this.loginDemo = this.loginDemo.bind(this);
+        this.submitDemo = this.submitDemo.bind(this);
     }
 
     update(field) {
@@ -25,13 +26,26 @@ class LoginForm extends React.Component {
         this.props.action(user).then(this.props.closeModal);
     }
 
-    handleDemo(e) {
-        e.preventDefault();
-        const user = Object.assign( {} , {
+    loginDemo(e) {
+        let demoUser = {
             email: "DinDjarin@mandalorian.com",
             password: "password"
-        });
-        this.props.action(user).then(this.props.closeModal);
+        }
+        this.setState(demoUser);
+        
+        e.preventDefault();
+        
+        let emailInput = document.getElementById('email-input');
+        let passwordInput = document.getElementById('password-input');
+        
+        setTimeout(this.submitDemo.bind(this), 3500, demoUser);
+        
+        emailInput.classList.add('typewriter');
+        passwordInput.classList.add('typewriter');
+    }
+
+    submitDemo(demoUser) {
+        this.props.action(demoUser).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -66,6 +80,7 @@ class LoginForm extends React.Component {
                                 placeholder="email"
                                 onChange={this.update('email')}
                                 className="login-email"
+                                id="email-input"
                             />
                         <br />
                             <input type="password"
@@ -73,11 +88,12 @@ class LoginForm extends React.Component {
                                 placeholder="password"
                                 onChange={this.update('password')}
                                 className="login-password"
+                                id="password-input"
                             />
                             <br />
                             <div>
                                 <input className="login-submit" type="submit" value={this.props.formType} />
-                                <input className="demo-login" onClick={this.handleDemo} type="submit" value="demo"/>
+                                <input className="demo-login" onClick={this.loginDemo} type="submit" value="demo"/>
                             </div>
                     </div>
                 </form>

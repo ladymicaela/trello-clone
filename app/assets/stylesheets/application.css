@@ -14,10 +14,10 @@
  *= require_self
  */
 
- @import 'reset.css';
- @import 'app.css';
- @import 'modal.css';
- @import 'session.css';
- @import 'login_form.css';
- @import 'user_form.css';
+ @import 'reset.scss';
+ @import 'app.scss';
+ @import 'modal.scss';
+ @import 'session.scss';
+ @import 'login_form.scss';
+ @import 'user_form.scss';
 

@@ -10,7 +10,7 @@ class LoginForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemo = this.handleDemo.bind(this);
+        this.loginDemo = this.loginDemo.bind(this);
     }
 
     update(field) {
@@ -25,15 +25,26 @@ class LoginForm extends React.Component {
         this.props.action(user).then(this.props.closeModal);
     }
 
-    handleDemo(e) {
+    loginDemo(e) {
+        this.demoUser();
+        let emailInput = document.getElementById('email-input');
+        let passwordInput = document.getElementById('password-input');
+        emailInput.classList.add('typewriter');
+        passwordInput.classList.add('typewriter');
         e.preventDefault();
-        const user = Object.assign( {} , {
-            email: "DinDjarin@mandalorian.com",
-            password: "password"
-        });
-        
-        this.props.action(user).then(this.props.closeModal);
+    
+        // this.props.action(this.state).then(this.props.closeModal)
     }
+
+    demoUser() {
+        this.setState(
+            {
+                email: "DinDjarin@mandalorian.com",
+                password: "password"
+            }
+        )
+    };
+
 
     renderErrors() {
         return (
@@ -67,6 +78,7 @@ class LoginForm extends React.Component {
                                 placeholder="email"
                                 onChange={this.update('email')}
                                 className="login-email"
+                                id="email-input"
                             />
                         <br />
                             <input type="password"
@@ -74,11 +86,12 @@ class LoginForm extends React.Component {
                                 placeholder="password"
                                 onChange={this.update('password')}
                                 className="login-password"
+                                id="password-input"
                             />
                             <br />
                             <div>
                                 <input className="login-submit" type="submit" value={this.props.formType} />
-                                <input className="demo-login" onClick={this.handleDemo} type="submit" value="demo"/>
+                                <input className="demo-login" onClick={this.loginDemo} type="submit" value="demo"/>
                             </div>
                     </div>
                 </form>

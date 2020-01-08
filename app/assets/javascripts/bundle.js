@@ -155,8 +155,9 @@ var receiveErrors = function receiveErrors(errors) {
     type: RECEIVE_SESSION_ERRORS,
     errors: errors
   };
-}; // export const receiveDemoUser = () => ({
-//     type: RECEIVE_DEMO_USER
+}; // export const receiveDemoUser = (user) => ({
+//     type: RECEIVE_DEMO_USER,
+//     user
 // })
 
 var signup = function signup(user) {
@@ -281,7 +282,7 @@ function (_React$Component) {
       password: ''
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.handleDemo = _this.handleDemo.bind(_assertThisInitialized(_this));
+    _this.loginDemo = _this.loginDemo.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -302,14 +303,22 @@ function (_React$Component) {
       this.props.action(user).then(this.props.closeModal);
     }
   }, {
-    key: "handleDemo",
-    value: function handleDemo(e) {
-      e.preventDefault();
-      var user = Object.assign({}, {
+    key: "loginDemo",
+    value: function loginDemo(e) {
+      this.demoUser();
+      var emailInput = document.getElementById('email-input');
+      var passwordInput = document.getElementById('password-input');
+      emailInput.classList.add('typewriter');
+      passwordInput.classList.add('typewriter');
+      e.preventDefault(); // this.props.action(this.state).then(this.props.closeModal)
+    }
+  }, {
+    key: "demoUser",
+    value: function demoUser() {
+      this.setState({
         email: "DinDjarin@mandalorian.com",
         password: "password"
       });
-      this.props.action(user).then(this.props.closeModal);
     }
   }, {
     key: "renderErrors",
@@ -342,20 +351,22 @@ function (_React$Component) {
         value: this.state.email,
         placeholder: "email",
         onChange: this.update('email'),
-        className: "login-email"
+        className: "login-email",
+        id: "email-input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
         placeholder: "password",
         onChange: this.update('password'),
-        className: "login-password"
+        className: "login-password",
+        id: "password-input"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-submit",
         type: "submit",
         value: this.props.formType
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "demo-login",
-        onClick: this.handleDemo,
+        onClick: this.loginDemo,
         type: "submit",
         value: "demo"
       })))));
@@ -410,10 +421,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     }, "Sign Up"),
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_4__["closeModal"])());
-    },
-    receiveDemoUser: function receiveDemoUser(user) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
-    }
+    } // receiveDemoUser: user => dispatch(login(user))
+
   };
 };
 

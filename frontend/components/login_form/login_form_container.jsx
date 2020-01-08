@@ -20,7 +20,7 @@ const mapDispatchToProps = dispatch => {
             </button>
         ),
         closeModal: () => dispatch(closeModal()),
-        receiveDemoUser: user => dispatch(login(user))
+        // receiveDemoUser: user => dispatch(login(user))
     };
 };
 

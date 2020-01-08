@@ -19,8 +19,9 @@ export const receiveErrors = errors => ({
     errors
 });
 
-// export const receiveDemoUser = () => ({
-//     type: RECEIVE_DEMO_USER
+// export const receiveDemoUser = (user) => ({
+//     type: RECEIVE_DEMO_USER,
+//     user
 // })
 
 export const signup = user => dispatch => (

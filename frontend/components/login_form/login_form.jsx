@@ -27,36 +27,26 @@ class LoginForm extends React.Component {
     }
 
     loginDemo(e) {
-        // this.demoUser();
-        e.preventDefault();
-        setTimeout(submitDemo(demoUser), 3000)
-        
         let demoUser = {
             email: "DinDjarin@mandalorian.com",
             password: "password"
         }
-        this.setState(demoUser)
+        this.setState(demoUser);
+        
+        e.preventDefault();
+        
         let emailInput = document.getElementById('email-input');
         let passwordInput = document.getElementById('password-input');
+        
+        setTimeout(this.submitDemo.bind(this), 3500, demoUser);
+        
         emailInput.classList.add('typewriter');
         passwordInput.classList.add('typewriter');
-        
-        // this.props.action(user).then(this.props.closeModal)
     }
 
     submitDemo(demoUser) {
-        this.props.action(demoUser).then(this.props.closeModal)
+        this.props.action(demoUser).then(this.props.closeModal);
     }
-
-    // demoUser() {
-    //     this.setState(
-    //         {
-    //             email: "DinDjarin@mandalorian.com",
-    //             password: "password"
-    //         }
-    //     )
-    // };
-
 
     renderErrors() {
         return (

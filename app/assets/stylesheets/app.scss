@@ -8,18 +8,3 @@ header {
     background-color: black;
     justify-content: flex-end;
 }
-
-.blink_me {
-  animation-name: blinker;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  color: white;
-  position: fixed;
-  transform: translate3d(0, 0, 0);
-}
-
-@keyframes blinker {
-  50% {
-    opacity: 0;
-  }
-}

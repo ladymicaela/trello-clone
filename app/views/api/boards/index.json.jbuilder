@@ -1,9 +1,6 @@
-json.array! @boards, :title, :creator_id
-
-json.boards.each do |board|
-    board.members.each do |member|
-        json.set! member.id do
-            json.extract! member, :id, :username, :email
-        end
+@boards.each do |board|
+    json.set! board.id do
+        json.extract! board, :id, :title, :creator_id
     end
 end
+

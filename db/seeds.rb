@@ -35,5 +35,10 @@ ApplicationRecord.transaction do
     board_membership_4 = BoardMembership.create!({member_id: greef.id, board_id: board_1.id})
     board_membership_5 = BoardMembership.create!({member_id: greef.id, board_id: board_2.id})
     board_membership_6 = BoardMembership.create!({member_id: mando.id, board_id: board_5.id})
+    board_membership_7 = BoardMembership.create!({member_id: mando.id, board_id: board_1.id})
+    board_membership_8 = BoardMembership.create!({member_id: mando.id, board_id: board_2.id})
+    board_membership_9 = BoardMembership.create!({member_id: greef.id, board_id: board_3.id})
+    board_membership_10 = BoardMembership.create!({member_id: mando.id, board_id: board_4.id})
+    board_membership_11 = BoardMembership.create!({member_id: armorer.id, board_id: board_5.id})
 
 end

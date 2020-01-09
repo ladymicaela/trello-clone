@@ -4,13 +4,10 @@ json.boards do
     end
 end
 
-
-
-
 json.members do
     @board.members.each do |member|
         json.set! member.id do
-            json.extract! member, :id, :username, :email
+            json.extract! member, :id, :username
         end
     end
 end

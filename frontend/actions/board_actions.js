@@ -3,7 +3,7 @@ import * as BoardAPIUtil from '../util/board_api_util';
 export const RECEIVE_BOARDS = 'RECEIVE_BOARDS';
 export const RECEIVE_BOARD = 'RECEIVE_BOARD';
 export const REMOVE_BOARD = 'REMOVE_BOARD';
-export const BOARD_ERRORS = 'BOARD_ERRORS';
+export const RECEIVE_BOARD_ERRORS = 'BOARD_ERRORS';
 export const CLEAR_BOARD_ERRORS = 'CLEAR_BOARD_ERRORS';
 
 const receiveBoards = boards => ({
@@ -22,7 +22,7 @@ const removeBoard = board => ({
 });
 
 const receiveBoardErrors = errors => ({
-    type: BOARD_ERRORS,
+    type: RECEIVE_BOARD_ERRORS,
     errors
 });
 

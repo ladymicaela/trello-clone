@@ -19,6 +19,19 @@ class User < ApplicationRecord
     validates :password_digest, :session_token, presence: true
     validates :password, length: { minimum: 6 }, allow_nil: true
 
+    has_many :created_boards,
+        foreign_key: :creator_id,
+        class_name: 'Board'
+
+    has_many :board_memberships,
+        foreign_key: :board_id,
+        class_name: 'BoardMembership'
+        
+    has_many :boards, 
+        through: :board_memberships,
+        source: :board
+
+
     after_initialize :ensure_session_token
 
     # Class method for finding a user ONLY if we have the correct username and password

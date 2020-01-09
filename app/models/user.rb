@@ -24,12 +24,14 @@ class User < ApplicationRecord
         class_name: 'Board'
 
     has_many :board_memberships,
-        foreign_key: :board_id,
-        class_name: 'BoardMembership'
+        foreign_key: :member_id,
+        class_name: 'BoardMembership',
+        dependent: :destroy
         
     has_many :boards, 
         through: :board_memberships,
-        source: :board
+        source: :board,
+        dependent: :destroy
 
 
     after_initialize :ensure_session_token

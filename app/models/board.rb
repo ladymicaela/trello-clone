@@ -18,12 +18,14 @@ class Board < ApplicationRecord
         class_name: 'User'
 
     has_many :board_memberships,
-        foreign_key: :member_id,
-        class_name: 'BoardMembership'   
+        foreign_key: :board_id,
+        class_name: 'BoardMembership',
+        dependent: :destroy   
 
     has_many :members, 
         through: :board_memberships,
-        source: :member
+        source: :member,
+        dependent: :destroy
 
         
         

@@ -6,6 +6,7 @@ class Api::BoardsController < ApplicationController
         @board = Board.new(board_params)
         @board.creator_id = current_user.id
         if @board.save
+            @board.members << @board.creator
             render "api/boards/show"
         else
             render json: @board.errors.full_messages, status: 422

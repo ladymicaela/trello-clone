@@ -7,5 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Board.destroy_all
+BoardMembership.destroy_all
+
+ApplicationRecord.connection.reset_pk_sequence!('users')
+ApplicationRecord.connection.reset_pk_sequence!('boards')
+ApplicationRecord.connection.reset_pk_sequence!('board_memberships')
 
 demoUser = User.create!({email: "DinDjarin@mandalorian.com", username: "Mando", password: "password"})

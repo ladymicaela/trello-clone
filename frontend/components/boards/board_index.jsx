@@ -29,7 +29,7 @@ class BoardIndex extends React.Component {
                         }
                     <div className="create-board-index-item">
                         <Link>
-                            Create new board
+                            create new board
                             <i className="fas fa-plus"></i>
                         </Link>
                     </div>

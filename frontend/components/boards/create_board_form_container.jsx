@@ -4,6 +4,13 @@ import BoardForm from './board_form';
 
 const mapStateToProps = state => ({
     board: {
-        und
-    }
-})
+        title: ""
+    },
+    formType: "Create Board"
+});
+
+const mapDispatchToProps = dispatch => ({
+    action: board => dispatch(createBoard(board))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(BoardForm);

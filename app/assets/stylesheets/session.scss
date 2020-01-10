@@ -44,6 +44,10 @@
     cursor: pointer;
 }
 
+.logo-home:hover {
+    color: goldenrod;
+}
+
 .session-links-nav {
     display: flex;
 }
@@ -83,6 +87,10 @@
     margin: 5px;
     cursor: pointer;
     outline: none;
+}
+
+.header-button:hover {
+    background-color: goldenrod;
 }
 
 .login-signup {

@@ -31,6 +31,7 @@ class BoardShow extends React.Component {
 
         return (
             <div className="board-show">
+
                 <div className="board-show-header">
                     <h1>{this.props.board.title}</h1>
                         <ul className="board-member-list">
@@ -47,8 +48,8 @@ class BoardShow extends React.Component {
                         <button onClick={this.destroyBoard}>
                             <i className="fas fa-trash-alt"></i>
                         </button>
-                </div>
-                {/* render list index component */}
+                </div> 
+                
             </div>
         )
     }

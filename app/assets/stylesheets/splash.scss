@@ -1,0 +1,23 @@
+.splash {
+    display: flex;
+    padding: 80px;
+}
+
+.splash-text {
+    display: flex;
+    flex-direction: column;
+    width: 540px;
+}
+
+.splash-text h1 {
+    color: goldenrod;
+    line-height: 55px;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.splash-text p {
+    color: #ddd;
+    font-size: 20px;
+    line-height: 35px;
+}

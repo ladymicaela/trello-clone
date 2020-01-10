@@ -1,6 +1,6 @@
 import React from 'react';
 
-class BoardFrom extends React.Component {
+class BoardForm extends React.Component {
     constructor(props) {
         super(props)
         this.state=this.props.board;
@@ -10,6 +10,7 @@ class BoardFrom extends React.Component {
     handleSubmit() {
         this.props.action(this.state)
             .then(this.props.closeModal)
+            .then( () => this.props.fetchBoards());
     }
 
     onChange(field) {
@@ -20,15 +21,34 @@ class BoardFrom extends React.Component {
         }
     }
 
+    renderErrors() {
+        return (
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
+        );
+    }
+
     render() {
         return (
             <div className="create-board-form-container">
                 <h1>{this.props.formType}</h1>
                 <hr/>
+                <br />
+                <div className="errors-create-board">
+                    {this.renderErrors()}
+                </div>
                 <div className="create-board-form">
                     <form onSubmit={this.handleSubmit}>
                         <label>Title:
-                            <input className="form-board-title" type="text" value={this.state.title} onChange={this.onChange('title')} />
+                            <input className="form-board-title"
+                                type="text" value={this.state.title} 
+                                onChange={this.onChange('title')}
+                            />
                         </label>
                         <input className="submit-new-board" type="submit" value={this.props.formType} />
                     </form>
@@ -38,4 +58,4 @@ class BoardFrom extends React.Component {
     }
 }
 
-export default BoardFrom;
+export default BoardForm;

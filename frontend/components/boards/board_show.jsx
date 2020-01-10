@@ -21,11 +21,11 @@ class BoardShow extends React.Component {
                 <ul>
                     {
                         this.props.members.map( member => 
-                            <li key={member.id}>{member.username}</li>
+                            <li key={member.id}>{member.username}<i className="fas fa-user-astronaut"></i></li>
                         )
                     }
                 </ul>
-                <button onClick={ () => this.props.destroyBoard(this.props.board.id)}>
+                <button onClick={ () => this.props.destroyBoard(this.state)}>
                     <i className="fas fa-trash-alt"></i>
                 </button>
             </div>

@@ -16,9 +16,9 @@ const receiveBoard = board => ({
     board
 });
 
-const removeBoard = board => ({
+const removeBoard = boardId => ({
     type: REMOVE_BOARD,
-    board
+    boardId
 });
 
 const receiveBoardErrors = errors => ({
@@ -54,7 +54,7 @@ export const updateBoard = board => dispatch => (
         .then( board => dispatch(receiveBoard(board)))
 );
 
-export const destroyBoard = board => dispatch => (
-    BoardAPIUtil.destroyBoard(board)
-        .then( board => dispatch(removeBoard(board)))
+export const destroyBoard = boardId => dispatch => (
+    BoardAPIUtil.destroyBoard(boardId)
+        .then( () => dispatch(removeBoard(boardId)))
 );

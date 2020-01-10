@@ -66,16 +66,16 @@
 }
 
 .create-board-index-item a {
-    text-decoration: none;
-    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     line-height: 50px;
     height: 100px;
     width: 200px;
     padding: 6px 8px;
     color: black;
+    text-decoration: none;
 }
 
 .create-board-index-item a i {

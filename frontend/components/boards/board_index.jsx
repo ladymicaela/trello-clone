@@ -17,7 +17,7 @@ class BoardIndex extends React.Component {
         return (
             <div className="board-index">
                 <div className="board-index-header">
-                    <i class="fas fa-user"></i>
+                    <i className="fas fa-user"></i>
                     <h2>Personal Boards</h2>
                 </div>
                 <div className="board-index-container">
@@ -28,10 +28,7 @@ class BoardIndex extends React.Component {
                                 )
                         }
                     <div className="create-board-index-item">
-                        <Link>
-                            create new board
-                            <i className="fas fa-plus"></i>
-                        </Link>
+                        <a onClick={() => this.props.openModal('create-board')}>create new board<i className="fas fa-plus"></i></a>
                     </div>
                 </div>
             </div>

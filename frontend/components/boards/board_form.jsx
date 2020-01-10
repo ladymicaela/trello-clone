@@ -9,6 +9,7 @@ class BoardFrom extends React.Component {
 
     handleSubmit() {
         this.props.action(this.state)
+            .then(this.props.closeModal)
     }
 
     onChange(field) {
@@ -21,14 +22,17 @@ class BoardFrom extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="create-board-form-container">
                 <h1>{this.props.formType}</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Title:
-                        <input type="text" value={this.state.title} onChange={this.onChange('title')} />
-                    </label>
-                    <input type="submit" value={this.props.formType} />
-                </form>
+                <hr/>
+                <div className="create-board-form">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>Title:
+                            <input className="form-board-title" type="text" value={this.state.title} onChange={this.onChange('title')} />
+                        </label>
+                        <input className="submit-new-board" type="submit" value={this.props.formType} />
+                    </form>
+                </div>
             </div>
         )
     }

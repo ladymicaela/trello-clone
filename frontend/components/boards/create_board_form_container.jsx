@@ -1,6 +1,8 @@
+import React from 'react';
 import { connect } from 'react-redux';
 import { createBoard } from '../../actions/board_actions';
 import BoardForm from './board_form';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = state => ({
     board: {
@@ -10,7 +12,13 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    action: board => dispatch(createBoard(board))
+    action: board => dispatch(createBoard(board)),
+    otherForm: (
+        <button onClick={() => dispatch(openModal('create-board'))}>
+            Create Board
+        </button>
+    ),
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoardForm);

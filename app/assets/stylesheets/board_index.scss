@@ -1,0 +1,46 @@
+.board-index-container {
+    display: flex;
+    min-width: 100%;
+    height: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.board-index-item {
+    min-height: 100px;
+    border: solid 3px black;
+    background-color: #ddd;
+    min-width: 200px;
+    margin: 10px;
+    transition: transform .2s;
+}
+
+.board-index-item a {
+    text-decoration: none;
+    display: block;
+    height: 100px;
+    width: 200px;
+    padding: 4px 8px;
+    color: black;
+}
+
+.board-index-item:hover {
+    filter: brightness(80%);
+    transform: scale(1.1); 
+}
+.board-index-item a:hover {
+    color: blue;
+}
+
+.board-index {
+    padding: 50px 100px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.board-index h2 {
+    color: goldenrod;
+    padding: 15px;
+    align-self: flex-start;
+}

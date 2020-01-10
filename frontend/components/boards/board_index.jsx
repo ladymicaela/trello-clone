@@ -14,14 +14,17 @@ class BoardIndex extends React.Component {
     render() {
         if (!this.props.boards) return null
         return (
-            <div>
-                <ul>
-                    {
-                        this.props.boards.map( board => 
-                            <BoardIndexItem board={board} key={board.id}/>
-                            )
-                    }
-                </ul>
+            <div className="board-index">
+                <h2>Personal Boards</h2>
+                <div className="board-index-container">
+
+                        {
+                            this.props.boards.map( board => 
+                                <BoardIndexItem board={board} key={board.id}/>
+                                )
+                        }
+
+                </div>
             </div>
         )
     }

@@ -27,8 +27,10 @@ class Board < ApplicationRecord
         source: :member,
         dependent: :destroy
 
-        
-        
+    has_many :lists,
+        foreign_key: :board_id,
+        class_name: 'List',
+        dependent: :destroy
 
 
 

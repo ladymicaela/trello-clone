@@ -20,16 +20,17 @@
     display: block;
     height: 100px;
     width: 200px;
-    padding: 4px 8px;
+    padding: 6px 8px;
     color: black;
 }
 
-.board-index-item:hover {
-    filter: brightness(80%);
+.board-index-item:hover, .create-board-index-item:hover {
     transform: scale(1.1); 
+    box-shadow: 5px 10px goldenrod;
 }
-.board-index-item a:hover {
-    color: blue;
+
+.board-index-item a:hover, .create-board-index-item a:hover {
+    color: goldenrod;
 }
 
 .board-index {
@@ -39,8 +40,45 @@
     flex-wrap: nowrap;
 }
 
-.board-index h2 {
+.board-index-header {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.board-index-header h2 {
     color: goldenrod;
-    padding: 15px;
-    align-self: flex-start;
+    padding: 10px;
+}
+
+.board-index-header i {
+    color: goldenrod;
+    font-size: 25px;
+}
+
+.create-board-index-item {
+    min-height: 100px;
+    border: solid 3px black;
+    background-color: #ddd;
+    min-width: 200px;
+    margin: 10px;
+    transition: transform .2s;
+}
+
+.create-board-index-item a {
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 50px;
+    height: 100px;
+    width: 200px;
+    padding: 6px 8px;
+    color: black;
+}
+
+.create-board-index-item a i {
+    font-size: 25px;
+    color: goldenrod;
 }

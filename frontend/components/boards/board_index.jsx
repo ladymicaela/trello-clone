@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import BoardIndexItem from './board_index_item';
 
@@ -15,7 +16,10 @@ class BoardIndex extends React.Component {
         if (!this.props.boards) return null
         return (
             <div className="board-index">
-                <h2>Personal Boards</h2>
+                <div className="board-index-header">
+                    <i class="fas fa-user"></i>
+                    <h2>Personal Boards</h2>
+                </div>
                 <div className="board-index-container">
 
                         {
@@ -23,7 +27,12 @@ class BoardIndex extends React.Component {
                                 <BoardIndexItem board={board} key={board.id}/>
                                 )
                         }
-
+                    <div className="create-board-index-item">
+                        <Link>
+                            Create new board
+                            <i className="fas fa-plus"></i>
+                        </Link>
+                    </div>
                 </div>
             </div>
         )

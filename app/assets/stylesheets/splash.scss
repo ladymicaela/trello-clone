@@ -1,6 +1,7 @@
 .splash {
     display: flex;
     padding: 80px;
+    justify-content: space-between;
 }
 
 .splash-text {
@@ -20,4 +21,18 @@
     color: #ddd;
     font-size: 20px;
     line-height: 35px;
+}
+
+.hero-image {
+    display: flex;
+    width: 800px;
+    justify-content: space-evenly;
+    padding: 0 0 0 20px;
+    align-items: flex-start;
+    height: 600px;
+}
+
+img {
+    width: 300px;
+    height: 500px;
 }

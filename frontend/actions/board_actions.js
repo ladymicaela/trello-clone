@@ -35,8 +35,8 @@ export const fetchBoards = () => dispatch => (
         .then( boards => dispatch(receiveBoards(boards)))
 );
 
-export const fetchBoard = id => dispatch => (
-    BoardAPIUtil.fetchBoard(id)
+export const fetchBoard = boardId => dispatch => (
+    BoardAPIUtil.fetchBoard(boardId)
         .then( board => dispatch(receiveBoard(board)))
 );
 
@@ -54,7 +54,7 @@ export const updateBoard = board => dispatch => (
         .then( board => dispatch(receiveBoard(board)))
 );
 
-export const deleteBoard = board => dispatch => (
-    BoardAPIUtil.deleteBoard(board)
+export const destroyBoard = board => dispatch => (
+    BoardAPIUtil.destroyBoard(board)
         .then( board => dispatch(removeBoard(board)))
 );

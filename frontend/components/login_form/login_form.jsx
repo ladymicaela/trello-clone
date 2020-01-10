@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrello } from '@fortawesome/free-brands-svg-icons'
 
@@ -23,7 +24,9 @@ class LoginForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.action(user).then(this.props.closeModal);
+        this.props.action(user)
+            .then(this.props.closeModal)
+            .then(() => this.props.history.push('/boards'));
     }
 
     loginDemo(e) {
@@ -45,7 +48,9 @@ class LoginForm extends React.Component {
     }
 
     submitDemo(demoUser) {
-        this.props.action(demoUser).then(this.props.closeModal);
+        this.props.action(demoUser)
+            .then(this.props.closeModal)
+            .then(() => this.props.history.push('/boards'));
     }
 
     renderErrors() {
@@ -102,4 +107,4 @@ class LoginForm extends React.Component {
     }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);

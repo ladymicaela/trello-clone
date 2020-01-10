@@ -6,13 +6,9 @@ const boardsReducer = ( state = {}, action ) => {
 
     switch (action.type) {
         case RECEIVE_BOARDS:
-            action.boards.forEach( board => {
-                nextState[board.id] = board;
-            });
-            return nextState;
+            return action.boards
         case RECEIVE_BOARD:
-            nextState[action.board.id] = action.board;
-            return nextState;
+            return action.board.boards
         case REMOVE_BOARD:
             delete nextState[action.board.id];
             return nextState;

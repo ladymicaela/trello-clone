@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
+
 import { faTrello } from '@fortawesome/free-brands-svg-icons'
 
 
@@ -20,7 +21,7 @@ const Session = ({ currentUser, logout, openModal }) => {
     );
     const welcomeSession = () => (
         <hgroup className="header-group">
-            <FontAwesomeIcon icon={faHome} className="logo-home" />
+            <Link to='/boards' className='logo-home'><i className="fas fa-home"></i></Link>
             <div className="header-logo-box">
                 <FontAwesomeIcon icon={faTrello} className="logo" />
                 <span>R2DToDo</span>

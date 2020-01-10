@@ -9,7 +9,7 @@ const boardsErrorReducer = ( state = [], action ) => {
         case CLEAR_BOARD_ERRORS:
             return [];
         default:
-            state;
+            return state;
     }
 };
 

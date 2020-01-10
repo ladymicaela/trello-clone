@@ -11,9 +11,8 @@ class BoardForm extends React.Component {
 
     handleSubmit() {
         this.props.action(this.state)
-            .then(this.props.closeModal)
-            .then(() => this.props.history.push(`/boards/${this.state.boardId}`));
-
+            .then(result => this.props.history.push(`/boards/${result.id}`))
+            .then(this.props.closeModal);
     }
  
     onChange(field) {

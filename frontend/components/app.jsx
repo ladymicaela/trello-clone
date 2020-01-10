@@ -12,6 +12,8 @@ import Modal from './modal/modal';
 
 import Splash from './splash';
 
+import Footer from './footer';
+
 import BoardIndexContainer from "./boards/board_index_container";
 import BoardShowContainer from "./boards/board_show_container";
 
@@ -22,12 +24,14 @@ const App = () => (
             <SessionContainer />
         </header>
         <Switch>
-            <AuthRoute exact path="/login" component={LogInFormContainer} />
-            <AuthRoute exact path="/signup" component={SignUpFormContainer} />
             <ProtectedRoute exact path="/boards" component={BoardIndexContainer} />
             <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
-            <AuthRoute exact path="/" component={Splash} />
+            <AuthRoute path="/" component={Splash} />
+            <ProtectedRoute path="/" component={BoardIndexContainer} />
         </Switch>
+        <footer>
+            <Footer />
+        </footer>
     </div>
 );
 

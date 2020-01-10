@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { createBoard } from '../../actions/board_actions';
 import BoardForm from './board_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import { fetchBoards } from '../../actions/board_actions';
 
 const mapStateToProps = state => ({
     board: {
@@ -20,8 +19,7 @@ const mapDispatchToProps = dispatch => ({
             Create Board
         </button>
     ),
-    closeModal: () => dispatch(closeModal()),
-    fetchBoards: () => dispatch(fetchBoards())
+    closeModal: () => dispatch(closeModal())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BoardForm);

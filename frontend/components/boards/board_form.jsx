@@ -1,18 +1,21 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 
 class BoardForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state=this.props.board;
+        this.state = this.props.board;
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit() {
         this.props.action(this.state)
             .then(this.props.closeModal)
-            .then( () => this.props.fetchBoards());
-    }
+            .then(() => this.props.history.push(`/boards/${this.state.boardId}`));
 
+    }
+ 
     onChange(field) {
         return (e) => {
             this.setState(
@@ -58,4 +61,4 @@ class BoardForm extends React.Component {
     }
 }
 
-export default BoardForm;
+export default withRouter(BoardForm);

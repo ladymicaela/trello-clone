@@ -39,7 +39,7 @@ class Api::BoardsController < ApplicationController
     def destroy
         @board = current_user.boards.find(params[:id])
         if @board.destroy
-            render {}
+            head :no_content
         else
             render plain: "That board does not exist."
         end

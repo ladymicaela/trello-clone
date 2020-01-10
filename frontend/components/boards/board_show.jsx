@@ -1,13 +1,23 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
+
 
 class BoardShow extends React.Component {
     constructor(props) {
         super(props)
+        this.state = this.props.board
+        this.destroyBoard = this.destroyBoard.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchBoard(this.props.match.params.boardId)
     }
+
+    destroyBoard() {
+        this.props.destroyBoard(this.state.id)
+            .then(() => this.props.history.push(`/boards`));
+    }
+
 
     render() {
 
@@ -34,7 +44,7 @@ class BoardShow extends React.Component {
                                 )
                             }
                         </ul>
-                        <button onClick={ () => this.props.destroyBoard(this.state)}>
+                        <button onClick={this.destroyBoard}>
                             <i className="fas fa-trash-alt"></i>
                         </button>
                 </div>
@@ -46,4 +56,4 @@ class BoardShow extends React.Component {
 
 };
 
-export default BoardShow;
+export default withRouter(BoardShow);

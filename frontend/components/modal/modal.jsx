@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../login_form/login_form_container';
 import SignupFormContainer from '../signup_form/signup_form_container';
 import CreateBoardFormContainer from '../boards/create_board_form_container';
+import CreateListFormContainer from '../lists/create_list_form_container';
+import EditListFormContainer from '../lists/edit_list_form_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -19,6 +21,12 @@ function Modal({ modal, closeModal }) {
             break;
         case 'create-board':
             component = <CreateBoardFormContainer />
+            break;
+        case 'create-list':
+            component = <CreateListFormContainer />
+            break;
+        case 'edit-list':
+            component = <EditListFormContainer list={modal.item}/>
             break;
         default:
             return null;

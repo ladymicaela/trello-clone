@@ -24,7 +24,7 @@ class BoardIndex extends React.Component {
                         {
                             this.props.boards.map( board => 
                                 <BoardIndexItem board={board} key={board.id}/>
-                                )
+                            )
                         }
                     <div className="create-board-index-item">
                         <a onClick={() => this.props.openModal('create-board')}>create new board<i className="fas fa-plus"></i></a>

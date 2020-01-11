@@ -7,8 +7,8 @@ export const fetchLists = () => (
 
 export const fetchList = listId => (
     $.ajax({
-        method: `/api/lists/${listId}`,
-        url: 'GET'
+        method: 'GET',
+        url: `/api/lists/${listId}`
     })
 );
 

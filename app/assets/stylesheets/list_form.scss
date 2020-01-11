@@ -1,0 +1,85 @@
+.errors-create-list {
+    min-height: 25px;
+    color: blue;
+}
+
+.errors-create-list ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+    line-height: 25px;
+}
+
+.create-list-form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+}
+
+.create-list-form-container hr {
+    border: 2px solid goldenrod;
+    width: 200px;
+}
+
+.create-list-form-container h1 {
+    text-align: center;
+}
+
+.create-list-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+}
+
+.create-list-form > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.submit-new-list {
+    border: none;
+    padding: 10px 22px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    outline: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border: 3px solid darkgrey;
+    background-color: darkgrey;
+}
+
+.submit-new-list:hover {
+    border: goldenrod solid 3px;
+    background-color: goldenrod;
+
+}
+
+.form-list-title {
+    width: 230px;
+    outline: none;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    border: 3px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    border: 3px solid darkgrey;
+    margin: 0 10px;
+    font-size: 15px;
+}
+
+.form-list-title:focus {
+  border: 3px solid goldenrod;
+}

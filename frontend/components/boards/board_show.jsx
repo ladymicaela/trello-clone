@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ListIndexContainer from '../lists/list_index_container';
 
 
 class BoardShow extends React.Component {
@@ -11,6 +12,7 @@ class BoardShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchBoard(this.props.match.params.boardId)
+        this.props.fetchLists
     }
 
     destroyBoard() {
@@ -49,6 +51,10 @@ class BoardShow extends React.Component {
                             <i className="fas fa-trash-alt"></i>
                         </button>
                 </div> 
+
+                <div>
+                    <ListIndexContainer />
+                </div>
                 
             </div>
         )

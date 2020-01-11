@@ -1,0 +1,69 @@
+.list-index-container {
+    width: 100%;
+    height: 100%;
+    // background-color: #ddd;
+}
+
+.list-index-items {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0 5px;
+}
+
+.list-index-item, .create-list-index-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    margin: 0 4px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 6px 8px 2px;
+}
+
+.list-index-item-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.list-index-item-header h3 {
+
+}
+
+.list-index-item-header a {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+}
+
+.list-index-item-header a:hover {
+    color: goldenrod;
+    cursor: pointer;
+  
+}
+
+.create-list-index-item {
+    background-color: #ddd;
+    opacity: .5;
+}
+
+.create-list-index-item:hover {
+    opacity: 1;
+}
+
+.create-list-index-item a {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.create-list-index-item a i {
+    margin: 0 5px;
+}
+.create-list-index-item:hover a i {
+    color: goldenrod;
+}
+
+
+
+

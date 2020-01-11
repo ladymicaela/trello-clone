@@ -28,8 +28,8 @@ class ListIndex extends React.Component {
                             />  
                         )
                     }
-                    <div className="create-board-index-item">
-                        <a onClick={() => this.props.openModal('create-list')}>add another list<i className="fas fa-plus"></i></a>
+                    <div className="create-list-index-item">
+                        <a onClick={() => this.props.openModal('create-list')}><i className="fas fa-plus"></i>Add another list</a>
                     </div>
                 </div>
             </div>

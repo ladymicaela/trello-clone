@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import BoardShow from './board_show';
 import { fetchBoard, destroyBoard } from '../../actions/board_actions';
+import { fetchLists } from '../../actions/list_actions';
 
 const mapStateToProps = ( state, ownProps) => ({
     board: state.entities.boards[ownProps.match.params.boardId],
@@ -9,7 +10,8 @@ const mapStateToProps = ( state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     fetchBoard: boardId => dispatch(fetchBoard(boardId)),
-    destroyBoard: board => dispatch(destroyBoard(board))
+    destroyBoard: board => dispatch(destroyBoard(board)),
+    fetchLists: () => dispatch(fetchLists())
     }
 );
 

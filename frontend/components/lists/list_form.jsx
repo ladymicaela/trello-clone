@@ -35,7 +35,7 @@ class ListForm extends React.Component {
 
     render() {
         return (
-            <div className="creat-list-form-container">
+            <div className="create-list-form-container">
                 <h1>{this.props.formType}</h1>
                 <hr />
                 <br />

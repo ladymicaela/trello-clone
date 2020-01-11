@@ -4,7 +4,7 @@ class Api::ListsController < ApplicationController
 
     def create
         @list = List.new(list_params)
-        @list.board_id = Board.find(params[:board_id])
+        @list.board_id = Board.find(params[:id])
         if @list.save
             render "api/boards/show"
         else
@@ -12,18 +12,14 @@ class Api::ListsController < ApplicationController
         end
     end
 
-    def show
-        # do not need show page (only see all the lists on board show page)
-    end
-
     def index
-        board = Board.find(params[:board_id])
+        board = Board.find(params[:id])
         @lists = board.lists
         render "api/boards/show"
     end
 
-    def update
-        @list = List.find(params[:id])
+    def update(list)
+        @list = list
         if @list.update_attributes(list_params)
             render "api/boards/show"
         else
@@ -31,10 +27,10 @@ class Api::ListsController < ApplicationController
         end
     end
 
-    def destroy
-        @list = List.find(params[:id])
+    def destroy(list)
+        @list = list
         if @list.destroy
-            reorder(@list)
+            @list.board.order_lists(@list)
             render "api/boards/show"
         else
             render plain: "That list does not exist"
@@ -42,14 +38,14 @@ class Api::ListsController < ApplicationController
     end
 
 
-    def reorder(list)
-        i = list.order
-        board = Board.find(params[:board_id])
-        board.lists[i..-1].each do |list|
-            list.order -= 1
-            list.save
-        end
-    end
+    # def reorder(list)
+    #     i = list.order
+    #     board = Board.find(params[:id])
+    #     board.lists[i..-1].each do |list|
+    #         list.order -= 1
+    #         list.save
+    #     end
+    # end
 
 
     private

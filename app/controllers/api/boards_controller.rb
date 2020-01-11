@@ -7,6 +7,11 @@ class Api::BoardsController < ApplicationController
         @board.creator_id = current_user.id
         if @board.save
             @membership = BoardMembership.create!(member_id: @board.creator.id, board_id: @board.id)
+            @lists = List.create!(
+                {title: "To Do", board_id: @board.id, order: 1},
+                {title: "In Progress", board_id: @board.id, order: 2},
+                {title: "Done", board_id: @board.id, order: 3},
+            )
             render "api/boards/show"
         else
             render json: @board.errors.full_messages, status: 422

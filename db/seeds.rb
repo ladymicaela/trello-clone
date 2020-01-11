@@ -11,10 +11,12 @@ ApplicationRecord.transaction do
     User.destroy_all
     Board.destroy_all
     BoardMembership.destroy_all
+    List.destroy_all
 
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('boards')
     ApplicationRecord.connection.reset_pk_sequence!('board_memberships')
+    ApplicationRecord.connection.reset_pk_sequence!('lists')
 
     mando = User.create!({email: "DinDjarin@mandalorian.com", username: "Mando", password: "password"})
     greef = User.create!({email: "GreefKarga@theguild.com", username: "Karga", password: "password"})
@@ -40,5 +42,25 @@ ApplicationRecord.transaction do
     board_membership_9 = BoardMembership.create!({member_id: greef.id, board_id: board_3.id})
     board_membership_10 = BoardMembership.create!({member_id: mando.id, board_id: board_4.id})
     board_membership_11 = BoardMembership.create!({member_id: armorer.id, board_id: board_5.id})
+
+    list_1 = List.create!({title: "To Do", board_id: 1, order: 1})
+    list_2 = List.create!({title: "In Progress", board_id: 1, order: 2})
+    list_3 = List.create!({title: "Done", board_id: 1, order: 3})
+    
+    list_4 = List.create!({title: "To Do", board_id: 2, order: 1})
+    list_5 = List.create!({title: "In Progress", board_id: 2, order: 2})
+    list_6 = List.create!({title: "Done", board_id: 2, order: 3})
+
+    list_7 = List.create!({title: "To Do", board_id: 3, order: 1})
+    list_8 = List.create!({title: "In Progress", board_id: 3, order: 2})
+    list_9 = List.create!({title: "Done", board_id: 3, order: 3})
+
+    list_10 = List.create!({title: "To Do", board_id: 4, order: 1})
+    list_11 = List.create!({title: "In Progress", board_id: 4, order: 2})
+    list_12 = List.create!({title: "Done", board_id: 4, order: 3})
+
+    list_13 = List.create!({title: "To Do", board_id: 5, order: 1})
+    list_14 = List.create!({title: "In Progress", board_id: 5, order: 2})
+    list_15 = List.create!({title: "Done", board_id: 5, order: 3})
 
 end

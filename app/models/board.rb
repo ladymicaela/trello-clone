@@ -33,5 +33,12 @@ class Board < ApplicationRecord
         dependent: :destroy
 
 
+    def order_lists(list)
+        i = list.order
+        board.lists[i..-1].each do |list|
+            list.order -= 1
+            list.save
+        end
+    end
 
 end

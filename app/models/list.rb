@@ -22,7 +22,7 @@ class List < ApplicationRecord
     after_validation :set_order
     
     def set_order
-        self.order ||= self.board.length
+        self.order ||= self.board.lists.length
     end
 
 end

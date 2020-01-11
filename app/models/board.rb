@@ -35,7 +35,8 @@ class Board < ApplicationRecord
 
     def order_lists(list)
         i = list.order
-        board.lists[i..-1].each do |list|
+        sorted_lists = board.lists.sort_by { |list| list.order }
+        sorted_lists[i..-1].each do |list|
             list.order -= 1
             list.save
         end

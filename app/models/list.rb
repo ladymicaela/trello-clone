@@ -19,4 +19,10 @@ class List < ApplicationRecord
         foreign_key: :board_id,
         class_name: 'Board'
 
+    after_validation :set_order
+    
+    def set_order
+        self.order ||= self.board.length
+    end
+
 end

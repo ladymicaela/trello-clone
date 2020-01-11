@@ -41,7 +41,7 @@ class Api::BoardsController < ApplicationController
         if @board.destroy
             head :no_content
         else
-            render plain: "That board does not exist."
+            render plain: "That board does not exist"
         end
     end
 

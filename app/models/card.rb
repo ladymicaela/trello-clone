@@ -21,10 +21,6 @@ class Card < ApplicationRecord
         foreign_key: :list_id,
         class_name: 'List'
 
-    belongs_to :board,
-        through: :list,
-        source: :board
-
     def set_order
         self.order ||= self.lists.cards.length
     end

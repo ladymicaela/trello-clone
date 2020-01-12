@@ -1,5 +1,5 @@
 import React from 'react';
-import ListIndex from './list_index';
+import CardIndexContainer from '../cards/card_index_container';
 
 // const ListIndexItem = props => {
 //     return (
@@ -46,6 +46,7 @@ class ListIndexItem extends React.Component {
                         </button>
                     </div>
                 </div>
+                <CardIndexContainer />
             </div>
         )
     }

@@ -38,4 +38,6 @@ class CardIndex extends React.Component {
         )
 
     }
-}
+};
+
+export default CardIndex;

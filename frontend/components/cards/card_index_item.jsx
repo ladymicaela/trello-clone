@@ -8,7 +8,7 @@ class CardIndexItem extends React.Component {
 
     render() {
         
-        if (!this.props.card) return null
+        if (!this.state.card) return null
 
         return(
             <div>

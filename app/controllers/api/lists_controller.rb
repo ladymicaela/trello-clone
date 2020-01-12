@@ -18,8 +18,9 @@ class Api::ListsController < ApplicationController
         render "api/boards/show"
     end
 
-    def update(list)
-        @list = list
+    def update
+        # @list = list
+        @list = List.find(params[:id])
         if @list.update_attributes(list_params)
             render "api/boards/show"
         else
@@ -27,8 +28,8 @@ class Api::ListsController < ApplicationController
         end
     end
 
-    def destroy(list)
-        @list = list
+    def destroy
+        @list = List.find(params[:id])
         if @list.destroy
             @list.board.order_lists(@list)
             render "api/boards/show"

@@ -1,6 +1,6 @@
 .list-index-container {
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     // background-color: #ddd;
 }
 
@@ -27,10 +27,6 @@
     justify-content: space-between;
 }
 
-.list-index-item-header h3 {
-
-}
-
 .list-index-item-header a {
     width: 20px;
     height: 20px;
@@ -50,6 +46,7 @@
 
 .create-list-index-item:hover {
     opacity: 1;
+    cursor: pointer;
 }
 
 .create-list-index-item a {

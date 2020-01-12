@@ -4,8 +4,10 @@ import EditListForm from './edit_list_form';
 
 
 const mapStateToProps = ( state, ownProps ) => ({
-    list: state.lists[ownProps.list.id],
-    formType: 'Update List'
+    // list: state.entities.lists[ownProps.list.id],
+    list: ownProps.list,
+    formType: 'Edit List',
+    errors: state.errors.listErrors
 });
 
 const mapDispatchToProps = dispatch => ({

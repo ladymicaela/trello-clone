@@ -16,7 +16,7 @@ class EditListForm extends React.Component {
             <ListForm
                 action={this.props.action}
                 formType={this.props.formType}
-                list={list}
+                list={this.props.list}
             />
         )
 

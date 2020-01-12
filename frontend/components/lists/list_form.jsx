@@ -10,7 +10,7 @@ class ListForm extends React.Component {
     handleSubmit() {
         this.props.action(this.state)
             .then(this.props.closeModal)
-            .then(this.props.fetchLists);
+            // .then(this.props.fetchLists);
     }
 
     onChange(field) {
@@ -22,6 +22,7 @@ class ListForm extends React.Component {
     }
 
     renderErrors() {
+        if (!this.props.errors) return null
         return (
             <ul>
                 {this.props.errors.map((error, i) => (

@@ -47,11 +47,10 @@ class BoardShow extends React.Component {
                                 )
                             }
                         </ul>
-                        <button onClick={this.destroyBoard}>
-                            <i className="fas fa-trash-alt"></i>
-                        </button>
-                </div> 
-
+                    <button onClick={this.destroyBoard}>
+                        <i className="fas fa-trash-alt"></i>
+                    </button>
+                </div>        
                 <div>
                     <ListIndexContainer />
                 </div>

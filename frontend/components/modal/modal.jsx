@@ -6,6 +6,7 @@ import SignupFormContainer from '../signup_form/signup_form_container';
 import CreateBoardFormContainer from '../boards/create_board_form_container';
 import CreateListFormContainer from '../lists/create_list_form_container';
 import EditListFormContainer from '../lists/edit_list_form_container';
+import DestroyBoardContainer from '../boards/destroy_board_container';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -21,6 +22,9 @@ function Modal({ modal, closeModal }) {
             break;
         case 'create-board':
             component = <CreateBoardFormContainer />
+            break;
+        case 'destroy-board':
+            component = <DestroyBoardContainer board={modal.item}/>
             break;
         case 'create-list':
             component = <CreateListFormContainer />

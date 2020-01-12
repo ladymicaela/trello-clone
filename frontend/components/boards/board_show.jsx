@@ -20,7 +20,6 @@ class BoardShow extends React.Component {
             .then(() => this.props.history.push(`/boards`));
     }
 
-
     render() {
 
         let icons = [
@@ -47,9 +46,10 @@ class BoardShow extends React.Component {
                                 )
                             }
                         </ul>
-                    <button onClick={this.destroyBoard}>
+                    {/* <button onClick={this.destroyBoard}>
                         <i className="fas fa-trash-alt"></i>
-                    </button>
+                    </button> */}
+                    <a onClick={() => this.props.openModalWithItem('destroy-board', this.state)}><i className="fas fa-trash-alt"></i></a>
                 </div>        
                 <div>
                     <ListIndexContainer />

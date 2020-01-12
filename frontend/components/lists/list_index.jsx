@@ -25,6 +25,8 @@ class ListIndex extends React.Component {
                                 list={list} 
                                 key={list.id} 
                                 openModalWithItem={this.props.openModalWithItem}
+                                destroyList={this.props.destroyList}
+                                fetchLists={this.props.fetchLists}
                             />  
                         )
                     }

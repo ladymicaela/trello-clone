@@ -27,16 +27,25 @@
     justify-content: space-between;
 }
 
-.list-index-item-header a {
+.list-index-actions {
+    display: flex;
+    justify-content: space-between;
+    width: 50px;
+}
+
+.list-index-item-header a, .list-index-item button {
     width: 20px;
     height: 20px;
     font-size: 20px;
 }
 
-.list-index-item-header a:hover {
+.list-index-item-header a:hover, .list-index-item-header button:hover {
     color: goldenrod;
     cursor: pointer;
-  
+}
+
+.list-index-item-header button:focus {
+    outline: none;
 }
 
 .create-list-index-item {

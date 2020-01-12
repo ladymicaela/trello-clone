@@ -31,7 +31,7 @@ class Api::ListsController < ApplicationController
     def destroy
         @list = List.find(params[:id])
         if @list.destroy
-            @list.board.order_lists(@list)
+            # @list.board.order_lists(@list)
             render "api/boards/show"
         else
             render plain: "That list does not exist"

@@ -19,6 +19,11 @@ class List < ApplicationRecord
         foreign_key: :board_id,
         class_name: 'Board'
 
+    has_many :cards,
+        foreign_key: :list_id,
+        class_name: 'Card',
+        dependent: :destroy
+
     after_validation :set_order
     
     def set_order

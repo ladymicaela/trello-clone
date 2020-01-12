@@ -32,6 +32,9 @@ class Board < ApplicationRecord
         class_name: 'List',
         dependent: :destroy
 
+    has_many :cards,
+        through: :lists,
+        source: :cards
 
     def order_lists(list)
         i = list.order

@@ -15,6 +15,8 @@ import Footer from './footer';
 import BoardIndexContainer from "./boards/board_index_container";
 import BoardShowContainer from "./boards/board_show_container";
 
+import CardShowContainer from "./cards/card_show_container";
+
 const App = () => (
     <div>
         <Modal />
@@ -24,6 +26,7 @@ const App = () => (
         <Switch>
             <ProtectedRoute exact path="/boards" component={BoardIndexContainer} />
             <ProtectedRoute exact path="/boards/:boardId" component={BoardShowContainer} />
+            <ProtectedRoute exact path="/boards/:boardId/cards/:cardId" component={CardShowContainer} />
             <AuthRoute path="/" component={Splash} />
             <ProtectedRoute path="/" component={BoardIndexContainer} />
         </Switch>

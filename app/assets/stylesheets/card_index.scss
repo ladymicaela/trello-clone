@@ -1,0 +1,29 @@
+.create-card-index-item {
+    display: flex;
+    flex-direction: column;
+    background-color: #ddd;
+    margin: 0 4px;
+    width: 250;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 6px 8px 2px;
+    opacity: .5;
+}
+
+.create-card-index-item:hover {
+    opacity: 1;
+    cursor: pointer;
+    filter: brightness(90%);
+}
+
+.create-card-index-item a {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.create-card-index-item a i {
+    margin: 0 5px;
+}
+.create-card-index-item:hover a i {
+    color: goldenrod;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import CardIndexContainer from '../cards/card_index_container';
+import CreateCardFormContainer from '../cards/create_card_form_container'
 
 // const ListIndexItem = props => {
 //     return (
@@ -26,6 +27,10 @@ class ListIndexItem extends React.Component {
         this.destroyList = this.destroyList.bind(this)
     }
     
+    componentDidMount() {
+        this.props.fetchCards()
+    }
+    
     destroyList() {
         this.props.destroyList(this.state.id)
             .then( () => this.props.fetchLists() )
@@ -34,6 +39,7 @@ class ListIndexItem extends React.Component {
     render() {
         
         if (!this.props.list) return null
+        // if (!this.props.cards) return null
 
         return(
             <div className="list-index-item">
@@ -46,7 +52,10 @@ class ListIndexItem extends React.Component {
                         </button>
                     </div>
                 </div>
-                <CardIndexContainer />
+                {/* <CardIndexContainer /> */}
+                <div className="create-card-index-item">
+                    <a onClick={() => this.props.openModal('create-card')}><i className="fas fa-plus"></i>Add another card</a>
+                </div>
             </div>
         )
     }

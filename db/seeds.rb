@@ -12,11 +12,13 @@ ApplicationRecord.transaction do
     Board.destroy_all
     BoardMembership.destroy_all
     List.destroy_all
+    Card.destroy_all
 
     ApplicationRecord.connection.reset_pk_sequence!('users')
     ApplicationRecord.connection.reset_pk_sequence!('boards')
     ApplicationRecord.connection.reset_pk_sequence!('board_memberships')
     ApplicationRecord.connection.reset_pk_sequence!('lists')
+    ApplicationRecord.connection.reset_pk_sequence!('cards')
 
     mando = User.create!({email: "DinDjarin@mandalorian.com", username: "Mando", password: "password"})
     greef = User.create!({email: "GreefKarga@theguild.com", username: "Karga", password: "password"})
@@ -62,5 +64,23 @@ ApplicationRecord.transaction do
     list_13 = List.create!({title: "To Do", board_id: 5, order: 1})
     list_14 = List.create!({title: "In Progress", board_id: 5, order: 2})
     list_15 = List.create!({title: "Done", board_id: 5, order: 3})
+
+    card_1 = Card.create!({title: "rescue child from Dr. Pershing's laboratory", list_id: list_3.id, order: 1 })
+    card_2 = Card.create!({title: "return the child to its home", list_id: list_1.id, order: 1})
+    card_3 = Card.create!({title: "keep the child safe", list_id: list_2.id, order: 1})
+    card_4 = Card.create!({title: "figure out why the child is so special", list_id: list_1.id, order: 2})
+    
+    card_5 = Card.create!({title: "the child", description: "50 years old", list_id: list_5.id, order: 1})
+    card_6 = Card.create!({title: "Mythrol", list_id: list_6.id, order: 1})
+    card_7 = Card.create!({title: "Amon Zarander", list_id: list_6.id, order: 2})
+    card_8 = Card.create!({title: "Karesh Carn", list_id: list_6.id, order: 3})
+    card_9 = Card.create!({title: "Voka Korr", list_id: list_6.id, order: 4})
+    card_10 = Card.create!({title: "Gaff Qorbin", list_id: list_6.id, order: 5})
+
+    card_11 = Card.create!({title: "get parts back from the Jawas", list_id: list_12.id, order: 2})
+    card_12 = Card.create!({title: "drop off with Peli Motto for repairs" , list_id: list_12.id, order: 1})
+    card_13 = Card.create!({title: "restock supplies", list_id: list_10.id, order: 1})
+    card_14 = Card.create!({title: "dust", list_id: list_11.id, order: 1})
+    card_15 = Card.create!({title: "child proof", list_id: list_10.id, order: 2})
 
 end

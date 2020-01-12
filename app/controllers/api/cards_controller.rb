@@ -22,8 +22,11 @@ class Api::CardsController < ApplicationController
     end
 
     def index
-        list = #have to figure out what goes here
-        @cards = list.cards
+        # list = #have to figure out what goes here
+        # @cards = list.cards
+        # @cards = Card.all
+        board = Board.find(params[:id])
+        @cards = board.lists.cards
         render "api/boards/show"
     end
 

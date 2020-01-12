@@ -1,5 +1,6 @@
 import { RECEIVE_CARDS, RECEIVE_CARD, REMOVE_CARD } from '../actions/card_actions';
 import { RECEIVE_LIST } from '../actions/list_actions';
+import { RECEIVE_BOARD } from '../actions/board_actions';
 
 const cardsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -14,7 +15,9 @@ const cardsReducer = (state = {}, action) => {
             delete nextState[action.cardId];
             return nextState
         case RECEIVE_LIST:
-            return action.list.cards
+            return action.board.cards
+        // case RECEIVE_BOARD:
+        //     return action.board.cards
         default:
             return state;
     }

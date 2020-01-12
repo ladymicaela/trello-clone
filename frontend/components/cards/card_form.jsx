@@ -52,6 +52,19 @@ class CardForm extends React.Component {
                                 onChange={this.onChange('title')}
                             />
                         </label>
+                        <label>Description:
+                            <textarea className="form-card-description"
+                                rows="4" cols="30"
+                                value={this.state.description}
+                                onChange={this.onChange('description')} 
+                            />
+                        </label>
+                        <label>Due Date:
+                            <input className="form-card-date"
+                                type="date" value={this.state.due_date}
+                                onChange={this.onChange('dueDate')}
+                            />
+                        </label>
                         <input className="submit-new-card" type="submit" value={this.props.formType} />
                     </form>
                 </div>

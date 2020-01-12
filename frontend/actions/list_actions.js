@@ -44,7 +44,7 @@ export const createList = list => dispatch => (
     ListAPIUtil.createList(list)
         .then(list => {
             dispatch(receiveList(list));
-            dispatch(clearListErrors())
+            dispatch(clearListErrors());
         },
             errors => dispatch(receiveListErrors(errors.responseJSON))
         )

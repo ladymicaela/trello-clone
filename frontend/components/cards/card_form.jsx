@@ -46,7 +46,7 @@ class CardForm extends React.Component {
                 </div>
                 <div className="create-card-form">
                     <form onSubmit={this.handleSubmit}>
-                        <label>Title:
+                        <label><span>*</span>Title:
                             <input className="form-card-title"
                                 type="text" value={this.state.title}
                                 onChange={this.onChange('title')}
@@ -65,6 +65,7 @@ class CardForm extends React.Component {
                                 onChange={this.onChange('dueDate')}
                             />
                         </label>
+                        <span>fields marked with * are required</span>
                         <input className="submit-new-card" type="submit" value={this.props.formType} />
                     </form>
                 </div>

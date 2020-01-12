@@ -18,7 +18,7 @@
     width: 100%;
     min-width: 400px;
     padding: 10px;
-    min-height: 450px;
+    min-height: 480px;
 }
 
 .create-card-form-container hr {
@@ -111,4 +111,9 @@
     border-radius: 10px;
     padding: 10px;
 
+}
+
+.create-card-form span {
+    font-size: 10px;
+    color:blue;
 }

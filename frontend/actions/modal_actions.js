@@ -9,11 +9,11 @@ export const openModal = modal => {
     };
 };
 
-export const openModalWithItem = (modal, openModalItem) => {
+    export const openModalWithItem = (modal, item) => {
     return {
         type: OPEN_MODAL_WITH_ITEM,
         modal,
-        openModalItem
+        item
     };
 };
 

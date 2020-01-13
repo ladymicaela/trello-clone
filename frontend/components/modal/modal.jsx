@@ -1,5 +1,5 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal, OPEN_MODAL, OPEN_MODAL_WITH_ITEM } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../login_form/login_form_container';
 import SignupFormContainer from '../signup_form/signup_form_container';
@@ -9,12 +9,13 @@ import EditListFormContainer from '../lists/edit_list_form_container';
 import DestroyBoardContainer from '../boards/destroy_board_container';
 import CreateCardFormContainer from '../cards/create_card_form_container';
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal}) {
     if (!modal) {
         return null;
     }
     let component;
-    switch (modal) {
+    // debugger
+    switch (modal.modal) {
         case 'login':
             component = <LoginFormContainer />;
             break;

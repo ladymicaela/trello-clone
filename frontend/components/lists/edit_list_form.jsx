@@ -17,6 +17,9 @@ class EditListForm extends React.Component {
                 action={this.props.action}
                 formType={this.props.formType}
                 list={this.props.list}
+                closeModal={this.props.closeModal}
+                fetchLists={this.props.fetchLists}
+                boardId={this.props.boardId}
             />
         )
 

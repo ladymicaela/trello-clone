@@ -6,7 +6,6 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     let pathname = ownProps.location.pathname
     return {
     list: {
@@ -25,7 +24,7 @@ const mapDispatchToProps = dispatch => ({
         </button>
     ),
     closeModal: () => dispatch(closeModal()),
-    fetchLists: () => dispatch(fetchLists())
+    fetchLists: (boardId) => dispatch(fetchLists(boardId))
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ListForm));

@@ -21,6 +21,7 @@ class Api::ListsController < ApplicationController
     def update
         # @list = list
         @list = List.find(params[:id])
+        @board = Board.find(@list.board_id)
         if @list.update_attributes(list_params)
             render "api/boards/show"
         else

@@ -14,6 +14,7 @@ class ListForm extends React.Component {
             },
             () => this.props.action(this.state)
                  .then(this.props.closeModal)
+                 .then(() => this.props.fetchLists(this.props.boardId))
         )
     }
 

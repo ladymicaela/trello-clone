@@ -4,7 +4,8 @@ class Api::ListsController < ApplicationController
 
     def create
         @list = List.new(list_params)
-        # @list.board_id = Board.find(params[:id])
+        # @board = Board.find(params[:boardId])
+        @board = Board.find(@list.board_id)
         if @list.save
             render "api/boards/show"
         else
@@ -13,7 +14,6 @@ class Api::ListsController < ApplicationController
     end
 
     def index
-        # debugger
         @board = Board.find(params[:boardId])
         @lists = @board.lists
         render "api/boards/show"
@@ -31,8 +31,8 @@ class Api::ListsController < ApplicationController
 
     def destroy
         @list = List.find(params[:id])
+        @board = Board.find(@list.board_id)
         if @list.destroy
-            # @list.board.order_lists(@list)
             render "api/boards/show"
         else
             render plain: "That list does not exist"

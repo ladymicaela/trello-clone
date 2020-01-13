@@ -14,8 +14,8 @@ const cardsReducer = (state = {}, action) => {
         case REMOVE_CARD:
             delete nextState[action.cardId];
             return nextState
-        case RECEIVE_LIST:
-            return action.board.cards
+        // case RECEIVE_LIST:
+        //     return action.board.cards
         // case RECEIVE_BOARD:
         //     return action.board.cards
         default:

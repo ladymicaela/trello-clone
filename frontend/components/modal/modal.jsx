@@ -8,7 +8,6 @@ import CreateListFormContainer from '../lists/create_list_form_container';
 import EditListFormContainer from '../lists/edit_list_form_container';
 import DestroyBoardContainer from '../boards/destroy_board_container';
 import CreateCardFormContainer from '../cards/create_card_form_container';
-import { withRouter } from 'react-router-dom';
 
 function Modal({ modal, closeModal }) {
     if (!modal) {
@@ -61,4 +60,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Modal));
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);

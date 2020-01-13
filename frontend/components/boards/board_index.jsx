@@ -1,10 +1,12 @@
 import React from 'react';
 
 import BoardIndexItem from './board_index_item';
+import { createStars } from '../../../app/assets/javascripts/stars';
 
 class BoardIndex extends React.Component {
     constructor(props) {
         super(props)
+        // createStars();
     }
 
     componentDidMount() {

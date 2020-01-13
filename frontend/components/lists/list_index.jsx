@@ -29,6 +29,7 @@ class ListIndex extends React.Component {
                                 destroyList={this.props.destroyList}
                                 fetchLists={this.props.fetchLists}
                                 fetchCards={this.props.fetchCards}
+                                boardId={this.props.boardId}
                             />  
                         )
                     }

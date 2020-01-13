@@ -33,7 +33,7 @@ class ListIndexItem extends React.Component {
     
     destroyList() {
         this.props.destroyList(this.state.id)
-            .then( () => this.props.fetchLists() )
+            .then( (boardId) => this.props.fetchLists(this.props.boardId) )
     }
 
     render() {

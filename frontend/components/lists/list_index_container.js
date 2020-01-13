@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
     fetchLists: (boardId) => dispatch(fetchLists(boardId)),
     openModal: modal => dispatch(openModal(modal)),
     openModalWithItem: (modal, item) => dispatch(openModalWithItem(modal, item)),
-    destroyList: list => dispatch(destroyList(list)),
+    destroyList: listId => dispatch(destroyList(listId)),
     fetchCards: () => dispatch(fetchCards())
 });
 

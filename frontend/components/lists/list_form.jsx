@@ -8,6 +8,11 @@ class ListForm extends React.Component {
     }
 
     handleSubmit() {
+        // this.setState(
+        //     {
+        //         ["boardId"]: 1
+        //     }
+        // )
         this.props.action(this.state)
             .then(this.props.closeModal)
             // .then(this.props.fetchLists);
@@ -39,7 +44,6 @@ class ListForm extends React.Component {
             <div className="create-list-form-container">
                 <h1>{this.props.formType}</h1>
                 <hr />
-                <br />
                 <div className="errors-create-list">
                     {this.renderErrors()}
                 </div>

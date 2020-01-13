@@ -4,7 +4,7 @@ class Api::CardsController < ApplicationController
 
     def create
         @card = Card.new(card_params)
-        @card.list_id = #have to figure out what goes here
+        # @card.list_id = #have to figure out what goes here
         if @card.save
             render "api/boards/show"
         else
@@ -52,7 +52,7 @@ class Api::CardsController < ApplicationController
     private
 
     def card_params
-        params.require(:cards).permit(:title, :description, :due_date)
+        params.require(:card).permit(:title, :description, :due_date)
     end
 
 end

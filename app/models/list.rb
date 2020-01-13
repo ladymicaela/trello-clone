@@ -24,10 +24,10 @@ class List < ApplicationRecord
         class_name: 'Card',
         dependent: :destroy
 
-    after_validation :set_order
+    # after_validation :set_order
     
-    def set_order
-        self.order ||= self.board.lists.length
-    end
+    # def set_order
+    #     self.order ||= self.board.lists.length
+    # end
 
 end

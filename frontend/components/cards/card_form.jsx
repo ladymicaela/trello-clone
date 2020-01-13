@@ -40,7 +40,6 @@ class CardForm extends React.Component {
             <div className="create-card-form-container">
                 <h1>{this.props.formType}</h1>
                 <hr />
-                <br />
                 <div className="errors-create-card">
                     {this.renderErrors()}
                 </div>

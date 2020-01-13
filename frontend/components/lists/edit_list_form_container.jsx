@@ -4,7 +4,6 @@ import EditListForm from './edit_list_form';
 import { withRouter } from 'react-router-dom';
 import { closeModal } from '../../actions/modal_actions';
 
-
 const mapStateToProps = ( state, ownProps ) => {
     let pathname = ownProps.location.pathname
     return {

@@ -4,7 +4,8 @@ class Api::CardsController < ApplicationController
 
     def create
         @card = Card.new(card_params)
-        # @card.list_id = #have to figure out what goes here
+        @list = List.find(@card.list_id)
+        @board = @list.board
         if @card.save
             render "api/boards/show"
         else
@@ -22,11 +23,9 @@ class Api::CardsController < ApplicationController
     end
 
     def index
-        # list = #have to figure out what goes here
-        # @cards = list.cards
-        # @cards = Card.all
-        board = Board.find(params[:id])
-        @cards = board.lists.cards
+        @list = List.find(params[:listId])
+        @board = @list.board
+        @cards = @list.cards
         render "api/boards/show"
     end
 
@@ -52,7 +51,7 @@ class Api::CardsController < ApplicationController
     private
 
     def card_params
-        params.require(:card).permit(:title, :description, :due_date)
+        params.require(:card).permit(:title, :description, :due_date, :list_id)
     end
 
 end

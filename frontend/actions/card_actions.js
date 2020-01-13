@@ -6,9 +6,12 @@ export const REMOVE_CARD = 'REMOVE_CARD';
 export const RECEIVE_CARD_ERRORS = 'RECEIVE_CARD_ERRORS';
 export const CLEAR_CARD_ERRORS = 'CLEAR_CARD_ERRORS';
 
-const receiveCards = cards => ({
+const receiveCards = ({cards, boards, lists, members}) => ({
     type: RECEIVE_CARDS,
-    cards
+    cards,
+    boards,
+    lists,
+    members
 });
 
 const receiveCard = card => ({
@@ -30,9 +33,9 @@ const clearCardErrors = () => ({
     type: CLEAR_CARD_ERRORS
 });
 
-export const fetchCards = () => dispatch => (
-    CardAPIUtil.fetchCards()
-        .then(cards => dispatch(receiveCards(cards)))
+export const fetchCards = (cardId) => dispatch => (
+    CardAPIUtil.fetchCards(cardId)
+        .then(payload => dispatch(receiveCards(payload)))
 );
 
 export const fetchCard = cardId => dispatch => (

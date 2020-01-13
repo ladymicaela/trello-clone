@@ -13,8 +13,8 @@ class ListForm extends React.Component {
                 ["board_id"]: this.props.boardId
             },
             () => this.props.action(this.state)
-                 .then(this.props.closeModal)
-                 .then(() => this.props.fetchLists(this.props.boardId))
+                .then(this.props.closeModal)
+                .then(() => this.props.fetchLists(this.props.boardId))
         )
     }
 

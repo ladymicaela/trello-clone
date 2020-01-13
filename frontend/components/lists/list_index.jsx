@@ -12,6 +12,7 @@ class ListIndex extends React.Component {
     }
 
     render() {
+        // debugger
         if (!this.props.lists) return null
 
         let orderedLists = this.props.lists.sort((a, b) => (a.order > b.order) ? 1 : -1)

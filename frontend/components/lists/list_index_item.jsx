@@ -30,21 +30,21 @@ class ListIndexItem extends React.Component {
     componentDidMount() {
         this.props.fetchCards()
     }
-    
+   
     destroyList() {
         this.props.destroyList(this.state.id)
-            .then( (boardId) => this.props.fetchLists(this.props.boardId) )
+            .then( () => this.props.fetchLists(this.props.boardId) )
     }
 
     render() {
         
         if (!this.props.list) return null
         // if (!this.props.cards) return null
-
+        console.log(this.props.list)
         return(
             <div className="list-index-item">
                 <div className="list-index-item-header">
-                    <h3>{this.state.title}</h3>
+                    <h3>{this.props.list.title}</h3>
                     <div className="list-index-actions">
                         <a onClick={() => this.props.openModalWithItem('edit-list', this.state)}><i className="fas fa-pencil-alt"></i></a>
                         <button onClick={this.destroyList}>

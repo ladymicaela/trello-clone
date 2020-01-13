@@ -8,7 +8,7 @@ class ListIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchLists();
+        this.props.fetchLists(this.props.boardId);
     }
 
     render() {

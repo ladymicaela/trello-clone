@@ -6,9 +6,12 @@ export const REMOVE_LIST = 'REMOVE_LIST';
 export const RECEIVE_LIST_ERRORS = 'LIST_ERRORS';
 export const CLEAR_LIST_ERRORS = 'CLEAR_LIST_ERRORS';
 
-const receiveLists = lists => ({
+const receiveLists = ({lists, boards, cards, members}) => ({
     type: RECEIVE_LISTS,
-    lists
+    lists,
+    boards,
+    cards,
+    members
 });
 
 const receiveList = list => ({
@@ -30,9 +33,9 @@ const clearListErrors = () => ({
     type: CLEAR_LIST_ERRORS
 });
 
-export const fetchLists = () => dispatch => (
-    ListAPIUtil.fetchLists()
-        .then(lists => dispatch(receiveLists(lists)))
+export const fetchLists = (boardId) => dispatch => (
+    ListAPIUtil.fetchLists(boardId)
+        .then(payload => dispatch(receiveLists(payload)))
 );
 
 export const fetchList = listId => dispatch => (

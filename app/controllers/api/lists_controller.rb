@@ -13,8 +13,9 @@ class Api::ListsController < ApplicationController
     end
 
     def index
-        board = Board.find(params[:id])
-        @lists = board.lists
+        # debugger
+        @board = Board.find(params[:boardId])
+        @lists = @board.lists
         render "api/boards/show"
     end
 
@@ -52,7 +53,7 @@ class Api::ListsController < ApplicationController
     private
 
     def list_params
-        params.require(:list).permit(:title)
+        params.require(:list).permit(:title, :board_id)
     end
 
 end

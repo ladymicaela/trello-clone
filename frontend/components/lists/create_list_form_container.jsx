@@ -3,14 +3,19 @@ import { connect } from 'react-redux';
 import { createList, fetchLists } from '../../actions/list_actions';
 import ListForm from './list_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => {
+    // debugger
+    let pathname = ownProps.location.pathname
+    return {
     list: {
         title: ""
     },
     formType: "Create List",
-    errors: state.errors.listErrors
-});
+    errors: state.errors.listErrors,
+    boardId: pathname[pathname.length-1]
+}};
 
 const mapDispatchToProps = dispatch => ({
     action: list => dispatch(createList(list)),
@@ -23,4 +28,4 @@ const mapDispatchToProps = dispatch => ({
     fetchLists: () => dispatch(fetchLists())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListForm);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ListForm));

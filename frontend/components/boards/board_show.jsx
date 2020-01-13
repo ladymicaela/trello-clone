@@ -12,7 +12,6 @@ class BoardShow extends React.Component {
 
     componentDidMount() {
         this.props.fetchBoard(this.props.match.params.boardId)
-        this.props.fetchLists
     }
 
     destroyBoard() {
@@ -52,7 +51,7 @@ class BoardShow extends React.Component {
                     {/* <a onClick={() => this.props.openModalWithItem('destroy-board', this.state)}><i className="fas fa-trash-alt"></i></a> */}
                 </div>        
                 <div>
-                    <ListIndexContainer />
+                    <ListIndexContainer boardId={this.props.board.id}/>
                 </div>
                 
             </div>

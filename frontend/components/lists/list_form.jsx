@@ -8,14 +8,13 @@ class ListForm extends React.Component {
     }
 
     handleSubmit() {
-        // this.setState(
-        //     {
-        //         ["boardId"]: 1
-        //     }
-        // )
-        this.props.action(this.state)
-            .then(this.props.closeModal)
-            // .then(this.props.fetchLists);
+        this.setState(
+            {
+                ["board_id"]: this.props.boardId
+            },
+            () => this.props.action(this.state)
+                 .then(this.props.closeModal)
+        )
     }
 
     onChange(field) {

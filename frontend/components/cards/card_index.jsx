@@ -8,14 +8,13 @@ class CardIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchCards();
+        this.props.fetchCards(this.props.listId);
     }
 
     render() {
         if (!this.props.cards) return null
 
         let orderedCards = this.props.cards.sort((a, b) => (a.order > b.order) ? 1 : -1)
-
         return (
             <div className="card-index-container">
                 <div className="card-index-items">
@@ -24,15 +23,14 @@ class CardIndex extends React.Component {
                             <CardIndexItem
                                 card={card}
                                 key={card.id}
+                                list={this.props.list}
                                 openModalWithItem={this.props.openModalWithItem}
                                 destroyCard={this.props.destroyCard}
                                 fetchCards={this.props.fetchCards}
+                                listId={this.props.listId}
                             />
                         )
                     }
-                    <div className="create-card-index-item">
-                        <a onClick={() => this.props.openModal('create-card')}><i className="fas fa-plus"></i>Add another card</a>
-                    </div>
                 </div>
             </div>
         )

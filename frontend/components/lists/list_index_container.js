@@ -6,7 +6,6 @@ import { fetchCards } from '../../actions/card_actions';
 import { fetchLists, destroyList } from '../../actions/list_actions';
 
 const mapStateToProps = (state, ownProps) => {
-//    debugger
     return {
     lists: Object.values(state.entities.lists),
     boardId: ownProps.boardId
@@ -18,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
     openModal: modal => dispatch(openModal(modal)),
     openModalWithItem: (modal, item) => dispatch(openModalWithItem(modal, item)),
     destroyList: listId => dispatch(destroyList(listId)),
-    fetchCards: () => dispatch(fetchCards())
+    fetchCards: (listId) => dispatch(fetchCards(listId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListIndex);

@@ -21,8 +21,10 @@ class Card < ApplicationRecord
         foreign_key: :list_id,
         class_name: 'List'
 
-    # def set_order
-    #     self.order ||= self.lists.cards.length
-    # end
+    before_validation :set_order
+
+    def set_order
+        self.order ||= (self.list.cards.length + 1)
+    end
 
 end

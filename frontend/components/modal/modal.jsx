@@ -34,6 +34,9 @@ function Modal({ modal, closeModal}) {
         case 'create-card':
             component = <CreateCardFormContainer />
             break;
+        case 'edit-card':
+            component = <EditCardFormContainer card={modal.item} />
+            break;
         case 'edit-list':
             component = <EditListFormContainer list={modal.item}/>
             break;

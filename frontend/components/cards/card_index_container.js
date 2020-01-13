@@ -4,15 +4,16 @@ import CardIndex from './card_index';
 
 import { fetchCards, destroyCard, updateCard } from '../../actions/card_actions';
 
-const mapStateToProps = state => ({
-    cards: Object.values(state.entities.cards)
+const mapStateToProps = (state, ownProps) => ({
+    cards: Object.values(state.entities.cards),
+    // listId: ownProps.listId
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchCards: () => dispatch(fetchCards()),
+    fetchCards: (listId) => dispatch(fetchCards(listId)),
     openModal: modal => dispatch(openModal(modal)),
     openModalWithItem: (modal, item) => dispatch(openModalWithItem(modal, item)),
-    destroyCard: card => dispatch(destroyCard(card)),
+    destroyCard: cardId => dispatch(destroyCard(cardId)),
     updateCard: card => dispatch(updateCard(card))
 });
 

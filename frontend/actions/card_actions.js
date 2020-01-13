@@ -33,8 +33,8 @@ const clearCardErrors = () => ({
     type: CLEAR_CARD_ERRORS
 });
 
-export const fetchCards = (cardId) => dispatch => (
-    CardAPIUtil.fetchCards(cardId)
+export const fetchCards = (listId) => dispatch => (
+    CardAPIUtil.fetchCards(listId)
         .then(payload => dispatch(receiveCards(payload)))
 );
 

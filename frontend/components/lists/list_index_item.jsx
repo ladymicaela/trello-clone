@@ -1,24 +1,5 @@
 import React from 'react';
 import CardIndexContainer from '../cards/card_index_container';
-import CreateCardFormContainer from '../cards/create_card_form_container'
-
-// const ListIndexItem = props => {
-//     return (
-//         <div className="list-index-item">
-//             <div className="list-index-item-header">
-//                 <h3>{props.list.title}</h3>
-//                 <div className="list-index-actions">
-//                     <a onClick={() => props.openModalWithItem('edit-list', props.list)}><i className="fas fa-pencil-alt"></i></a>
-//                     <button onClick={ () => props.destroyList(props.list.id)}>
-//                         <i className="fas fa-trash-alt"></i>
-//                     </button>
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// };
-
-// export default ListIndexItem;
 
 class ListIndexItem extends React.Component {
     constructor(props) {
@@ -28,7 +9,7 @@ class ListIndexItem extends React.Component {
     }
     
     componentDidMount() {
-        this.props.fetchCards()
+        this.props.fetchCards(this.props.list.id)
     }
    
     destroyList() {
@@ -40,7 +21,7 @@ class ListIndexItem extends React.Component {
         
         if (!this.props.list) return null
         // if (!this.props.cards) return null
-        console.log(this.props.list)
+
         return(
             <div className="list-index-item">
                 <div className="list-index-item-header">
@@ -52,7 +33,7 @@ class ListIndexItem extends React.Component {
                         </button>
                     </div>
                 </div>
-                {/* <CardIndexContainer /> */}
+                <CardIndexContainer listId={this.props.list.id} />
                 <div className="create-card-index-item">
                     <a onClick={() => this.props.openModal('create-card')}><i className="fas fa-plus"></i>Add another card</a>
                 </div>

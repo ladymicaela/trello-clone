@@ -27,3 +27,29 @@
 .create-card-index-item:hover a i {
     color: goldenrod;
 }
+
+.card-index-items {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-index-item {
+    background-color: white;
+    margin: 10px 2px 0 2px;
+    border: solid 1px #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.card-index-item a {
+    cursor: pointer;  
+    font-size: 15px;  
+}
+
+.card-index-item:hover {
+    background-color: goldenrod;
+    cursor: pointer;
+    filter: brightness(110%);
+    border: solid 1px goldenrod;
+}

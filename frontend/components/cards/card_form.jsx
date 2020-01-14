@@ -66,7 +66,7 @@ class CardForm extends React.Component {
                         <label>Due Date:
                             <input className="form-card-date"
                                 type="date" value={this.state.dueDate}
-                                onChange={this.onChange('dueDate')}
+                                onChange={this.onChange('due_date')}
                             />
                         </label>
                         <span>fields marked with * are required</span>

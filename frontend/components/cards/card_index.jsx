@@ -28,6 +28,8 @@ class CardIndex extends React.Component {
                                 destroyCard={this.props.destroyCard}
                                 fetchCards={this.props.fetchCards}
                                 listId={this.props.listId}
+                                history={this.props.history}
+                                boardId={this.props.boardId}
                             />
                         )
                     }

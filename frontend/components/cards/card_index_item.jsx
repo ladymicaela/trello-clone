@@ -3,9 +3,13 @@ import React from 'react';
 class CardIndexItem extends React.Component {
     constructor(props) {
         super(props)
+        this.openShow = this.openShow.bind(this)
     }
 
-
+    openShow() {
+        this.props.openModalWithItem('show-card', this.props.card)
+            .then(this.props.history.push(`/boards/${this.props.boardId}/cards/${this.props.card.id}`))
+    }
 
     render() {
         
@@ -13,7 +17,8 @@ class CardIndexItem extends React.Component {
 
         return(
             <div className="card-index-item">
-                <a onClick={() => this.props.openModalWithItem('show-card', this.props.card)}>{this.props.card.title}</a>
+                {/* <a onClick={() => this.props.openModalWithItem('show-card', this.props.card)}>{this.props.card.title}</a> */}
+                <a onClick={this.openShow}>{this.props.card.title}</a>
             </div>
         )
     }

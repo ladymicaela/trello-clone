@@ -9,8 +9,13 @@ class CardForm extends React.Component {
     }
 
     handleSubmit() {
-        this.props.action(this.state)
-            .then(this.props.closeModal)
+        this.setState(
+            {
+                ["list_id"]: this.props.list.id
+            },
+            () => this.props.action(this.state)
+                .then(this.props.closeModal)
+        )
     }
 
     onChange(field) {

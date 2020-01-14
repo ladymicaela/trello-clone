@@ -32,7 +32,7 @@ function Modal({ modal, closeModal}) {
             component = <CreateListFormContainer />
             break;
         case 'create-card':
-            component = <CreateCardFormContainer />
+            component = <CreateCardFormContainer list={modal.item}/>
             break;
         case 'show-card':
             component = <CardShowContainer card={modal.item} />

@@ -9,7 +9,8 @@ const mapStateToProps = state => ({
         title: ""
     },
     formType: "Create Card",
-    errors: state.errors.cardErrors
+    errors: state.errors.cardErrors,
+    list: state.ui.modal.item
 });
 
 const mapDispatchToProps = dispatch => ({

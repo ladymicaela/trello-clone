@@ -34,7 +34,7 @@ class ListIndexItem extends React.Component {
                 </div>
                 <CardIndexContainer listId={this.props.list.id} />
                 <div className="create-card-index-item">
-                    <a onClick={() => this.props.openModal('create-card')}><i className="fas fa-plus"></i>Add another card</a>
+                    <a onClick={() => this.props.openModalWithItem('create-card', this.props.list)}><i className="fas fa-plus"></i>Add another card</a>
                 </div>
             </div>
         )

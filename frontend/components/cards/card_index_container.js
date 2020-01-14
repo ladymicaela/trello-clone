@@ -3,12 +3,15 @@ import { openModal, openModalWithItem } from '../../actions/modal_actions';
 import CardIndex from './card_index';
 
 import { fetchCards, destroyCard, updateCard } from '../../actions/card_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     return { 
         cards: Object.values(state.entities.cards).filter( card => 
         card.listId === ownProps.listId
-    )}
+    ),
+    boardId: state.entities.boards[ownProps.match.params.id]
+}
 };
 
 const mapDispatchToProps = dispatch => ({
@@ -19,4 +22,4 @@ const mapDispatchToProps = dispatch => ({
     updateCard: card => dispatch(updateCard(card))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CardIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(CardIndex));

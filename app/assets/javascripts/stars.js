@@ -3,7 +3,7 @@
 //     document.body.appendChild(c)
 // })
 
-const createStars = () => {
+function createStars() {
     addStars();
     document.body.appendChild(c)
 }

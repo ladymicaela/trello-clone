@@ -21,14 +21,16 @@ class CardIndexItem extends React.Component {
         if (!this.props.card) return null
 
         return(
-            <div className="card-index-item">
-                <a onClick={() => this.props.openModalWithItem('show-card', this.props.card)}>{this.props.card.title}
-                    <div className="card-alert-icons">
-                        <i className={description}></i>
-                        <i className={dueDate}></i>
+     
+                    <div className="card-index-item">
+                        <a onClick={() => this.props.openModalWithItem('show-card', this.props.card)}>{this.props.card.title}
+                            <div className="card-alert-icons">
+                                <i className={description}></i>
+                                <i className={dueDate}></i>
+                            </div>
+                        </a>
                     </div>
-                </a>
-            </div>
+
         )
     }
 };

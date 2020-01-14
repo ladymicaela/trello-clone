@@ -15,7 +15,7 @@ import Footer from './footer';
 import BoardIndexContainer from "./boards/board_index_container";
 import BoardShowContainer from "./boards/board_show_container";
 
-import CardShowContainer from "./cards/card_show_container";
+
 
 const App = () => (
     <div>

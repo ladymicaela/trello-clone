@@ -2,6 +2,8 @@ import React from 'react';
 
 import CardIndexItem from './card_index_item';
 
+
+
 class CardIndex extends React.Component {
     constructor(props) {
         super(props)
@@ -20,6 +22,7 @@ class CardIndex extends React.Component {
                 <div className="card-index-items">
                     {
                         orderedCards.map(card =>
+                    
                             <CardIndexItem
                                 card={card}
                                 key={card.id}
@@ -30,7 +33,11 @@ class CardIndex extends React.Component {
                                 listId={this.props.listId}
                                 history={this.props.history}
                                 boardId={this.props.boardId}
+                         
                             />
+
+                        
+
                         )
                     }
                 </div>

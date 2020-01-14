@@ -12,21 +12,6 @@ class EditCardForm extends React.Component {
         this.props.fetchCard(this.props.card.id)
     }
 
-    // render() {
-    //     if (!this.props.card) return null
-    //     return (
-    //         <CardForm
-    //             action={this.props.action}
-    //             formType={this.props.formType}
-    //             card={this.props.card}
-    //             closeModal={this.props.closeModal}
-    //             fetchCards={this.props.fetchCards}
-    //             listId={this.props.card.listId}
-    //         />
-    //     )
-
-    // }
-
     handleSubmit() {
       this.props.action(this.state)
             .then(this.props.closeModal)

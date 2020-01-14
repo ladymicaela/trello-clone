@@ -15,6 +15,7 @@ class CardForm extends React.Component {
             },
             () => this.props.action(this.state)
                 .then(this.props.closeModal)
+                .then(() => this.props.fetchCards(this.props.list.id))
         )
     }
 

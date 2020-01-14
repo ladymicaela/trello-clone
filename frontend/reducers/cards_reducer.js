@@ -8,7 +8,9 @@ const cardsReducer = (state = {}, action) => {
         case RECEIVE_CARDS:
             return action.cards
         case RECEIVE_CARD:
-            return action.card.cards
+            nextState[action.card.id] = action.card
+            // return action.card.cards
+            return nextState;
         case REMOVE_CARD:
             delete nextState[action.cardId];
             return nextState

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createCard} from '../../actions/card_actions';
+import { createCard, fetchCards } from '../../actions/card_actions';
 import CardForm from './card_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
@@ -15,6 +15,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     action: card => dispatch(createCard(card)),
+    fetchCards: listId => dispatch(fetchCards(listId)),
     closeModal: () => dispatch(closeModal())
 });
 

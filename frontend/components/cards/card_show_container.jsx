@@ -4,7 +4,7 @@ import { fetchCard, destroyCard, updateCard } from '../../actions/card_actions';
 import React from 'react';
 
 const mapStateToProps = (state, ownProps) => ({
-    card: state.entities.cards[ownProps.match.params.cardId]
+    // card: state.entities.cards[ownProps.match.params.cardId]
 });
 
 const mapDispatchToProps = dispatch => ({

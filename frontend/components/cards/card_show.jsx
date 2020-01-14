@@ -3,11 +3,10 @@ import React from 'react';
 class CardShow extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.card
     }
 
     componentDidMount() {
-        this.props.fetchCard(this.props.match.params.cardId)
+        this.props.fetchCard(this.props.card.id)
     }
 
     render() {
@@ -15,9 +14,9 @@ class CardShow extends React.Component {
 
         return (
             <div>
-                <h1>{this.state.title}</h1>
-                <span>{this.state.due_date}</span>
-                <p>{this.state.description}</p>
+                <h1>{this.props.card.title}</h1>
+                <span>{this.props.card.dueDate}</span>
+                <p>{this.props.card.description}</p>
             </div>
         )
     }

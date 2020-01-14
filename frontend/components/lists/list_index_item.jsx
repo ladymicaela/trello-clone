@@ -20,8 +20,7 @@ class ListIndexItem extends React.Component {
     render() {
         
         if (!this.props.list) return null
-        // if (!this.props.cards) return null
-
+      
         return(
             <div className="list-index-item">
                 <div className="list-index-item-header">

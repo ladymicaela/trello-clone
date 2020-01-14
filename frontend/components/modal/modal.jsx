@@ -8,13 +8,13 @@ import CreateListFormContainer from '../lists/create_list_form_container';
 import EditListFormContainer from '../lists/edit_list_form_container';
 import DestroyBoardContainer from '../boards/destroy_board_container';
 import CreateCardFormContainer from '../cards/create_card_form_container';
+import CardShowContainer from '../cards/card_show_container';
 
 function Modal({ modal, closeModal}) {
     if (!modal) {
         return null;
     }
     let component;
-    // debugger
     switch (modal.modal) {
         case 'login':
             component = <LoginFormContainer />;
@@ -34,8 +34,8 @@ function Modal({ modal, closeModal}) {
         case 'create-card':
             component = <CreateCardFormContainer />
             break;
-        case 'edit-card':
-            component = <EditCardFormContainer card={modal.item} />
+        case 'show-card':
+            component = <CardShowContainer card={modal.item} />
             break;
         case 'edit-list':
             component = <EditListFormContainer list={modal.item}/>

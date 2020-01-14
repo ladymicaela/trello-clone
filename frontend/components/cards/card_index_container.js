@@ -4,10 +4,12 @@ import CardIndex from './card_index';
 
 import { fetchCards, destroyCard, updateCard } from '../../actions/card_actions';
 
-const mapStateToProps = (state, ownProps) => ({
-    cards: Object.values(state.entities.cards),
-    // listId: ownProps.listId
-});
+const mapStateToProps = (state, ownProps) => {
+    return { 
+        cards: Object.values(state.entities.cards).filter( card => 
+        card.listId === ownProps.listId
+    )}
+};
 
 const mapDispatchToProps = dispatch => ({
     fetchCards: (listId) => dispatch(fetchCards(listId)),

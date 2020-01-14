@@ -13,7 +13,7 @@ class CardIndexItem extends React.Component {
 
         return(
             <div className="card-index-item">
-                <a onClick={() => this.props.openModalWithItem('edit-card', this.props.card)}>{this.props.card.title}</a>
+                <a onClick={() => this.props.openModalWithItem('show-card', this.props.card)}>{this.props.card.title}</a>
             </div>
         )
     }

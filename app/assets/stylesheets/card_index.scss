@@ -53,3 +53,10 @@
     filter: brightness(110%);
     border: solid 1px goldenrod;
 }
+
+.card-alert-icons {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 4px;
+    margin-bottom: 2px;
+}

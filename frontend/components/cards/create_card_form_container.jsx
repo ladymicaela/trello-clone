@@ -15,11 +15,6 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     action: card => dispatch(createCard(card)),
-    otherForm: (
-        <button onClick={() => dispatch(openModal('create-card'))}>
-            Create Card
-        </button>
-    ),
     closeModal: () => dispatch(closeModal())
 });
 

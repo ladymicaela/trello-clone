@@ -28,8 +28,8 @@ class CardIndexItem extends React.Component {
 
         return(
             <div className="card-index-item">
-                {/* <a onClick={() => this.props.openModalWithItem('show-card', this.props.card)}>{this.props.card.title}</a> */}
-                <a onClick={this.openShow}>{this.props.card.title}</a>
+                <a onClick={() => this.props.openModalWithItem('show-card', this.props.card)}>{this.props.card.title}</a>
+                {/* <a onClick={this.openShow}>{this.props.card.title}</a> */}
                 <div className="card-alert-icons">
                     <i className={description}></i>
                     <i className={dueDate}></i>

@@ -40,6 +40,7 @@ class Api::CardsController < ApplicationController
 
     def destroy
         @card = Card.find(params[:id])
+        @board = Board.find(@card.list.board_id)
         if @card.destroy
             render "api/boards/show"
         else

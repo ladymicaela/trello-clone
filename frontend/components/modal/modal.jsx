@@ -9,6 +9,7 @@ import EditListFormContainer from '../lists/edit_list_form_container';
 import DestroyBoardContainer from '../boards/destroy_board_container';
 import CreateCardFormContainer from '../cards/create_card_form_container';
 import CardShowContainer from '../cards/card_show_container';
+import EditCardFormContainer from '../cards/edit_card_form_container';
 
 function Modal({ modal, closeModal}) {
     if (!modal) {
@@ -39,6 +40,9 @@ function Modal({ modal, closeModal}) {
             break;
         case 'edit-list':
             component = <EditListFormContainer list={modal.item}/>
+            break;
+        case 'edit-card':
+            component = <EditCardFormContainer card={modal.item}/>
             break;
         default:
             return null;

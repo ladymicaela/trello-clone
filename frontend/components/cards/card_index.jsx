@@ -18,30 +18,36 @@ class CardIndex extends React.Component {
 
         let orderedCards = this.props.cards.sort((a, b) => (a.order > b.order) ? 1 : -1)
         return (
-            <div className="card-index-container">
-                <div className="card-index-items">
-                    {
-                        orderedCards.map(card =>
-                    
-                            <CardIndexItem
-                                card={card}
-                                key={card.id}
-                                list={this.props.list}
-                                openModalWithItem={this.props.openModalWithItem}
-                                destroyCard={this.props.destroyCard}
-                                fetchCards={this.props.fetchCards}
-                                listId={this.props.listId}
-                                history={this.props.history}
-                                boardId={this.props.boardId}
+      
+                
+   
+                        <div className="card-index-container">
+                            <div className="card-index-items">
+                                {
+                                    orderedCards.map(card =>
+                                        <CardIndexItem
+                                            card={card}
+                                            key={card.id}
+                                            list={this.props.list}
+                                            openModalWithItem={this.props.openModalWithItem}
+                                            destroyCard={this.props.destroyCard}
+                                            fetchCards={this.props.fetchCards}
+                                            listId={this.props.listId}
+                                            history={this.props.history}
+                                            boardId={this.props.boardId}
+
+                                       
+                                            
+                                            >
+
+
+                                        </CardIndexItem>
+                                    )
+                                }
                          
-                            />
+                            </div>
+                        </div>
 
-                        
-
-                        )
-                    }
-                </div>
-            </div>
         )
 
     }

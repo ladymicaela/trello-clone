@@ -1,5 +1,7 @@
 import React from 'react';
 
+import {Draggable} from 'react-beautiful-dnd';
+
 class CardIndexItem extends React.Component {
     constructor(props) {
         super(props)
@@ -21,8 +23,14 @@ class CardIndexItem extends React.Component {
         if (!this.props.card) return null
 
         return(
-     
-                    <div className="card-index-item">
+            
+            <Draggable draggableId={`${this.props.card.id}`} index={this.props.card.order} >
+                {(provided) => (
+                    <div className="card-index-item" 
+                        ref={provided.innerRef}
+                        {...provided.draggableProps}
+                        {...provided.dragHandleProps}
+                        >
                         <a onClick={() => this.props.openModalWithItem('show-card', this.props.card)}>{this.props.card.title}
                             <div className="card-alert-icons">
                                 <i className={description}></i>
@@ -30,6 +38,8 @@ class CardIndexItem extends React.Component {
                             </div>
                         </a>
                     </div>
+                )}
+            </Draggable>
 
         )
     }

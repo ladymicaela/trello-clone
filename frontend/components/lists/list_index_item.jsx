@@ -1,6 +1,8 @@
 import React from 'react';
 import CardIndexContainer from '../cards/card_index_container';
 
+import { Droppable } from 'react-beautiful-dnd';
+
 class ListIndexItem extends React.Component {
     constructor(props) {
         super(props)
@@ -22,6 +24,7 @@ class ListIndexItem extends React.Component {
         if (!this.props.list) return null
       
         return(
+
                 <div className="list-index-item">
                     <div className="list-index-item-header">
                         <h3>{this.props.list.title}</h3>
@@ -32,11 +35,25 @@ class ListIndexItem extends React.Component {
                             </button>
                         </div>
                     </div>
-                    <CardIndexContainer listId={this.props.list.id} />
+
+                    <Droppable droppableId={`${this.props.list.id}`}>
+
+                    {(provided) => (
+                        <div ref={provided.innerRef} {...provided.droppableProps}>
+                   
+
+                        <CardIndexContainer listId={this.props.list.id} />
+                        {provided.placeholder}
+                        </div>
+                    )}
+
+                    </Droppable>
+
                     <div className="create-card-index-item">
                         <a onClick={() => this.props.openModalWithItem('create-card', this.props.list)}><i className="fas fa-plus"></i>Add another card</a>
                     </div>
                 </div>
+                
             )
     
         }

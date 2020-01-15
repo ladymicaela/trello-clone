@@ -28,14 +28,26 @@ class ListIndex extends React.Component {
             return;
         }
 
+        // let nextState = Object.assign({}, this.state[draggableId])
+
+        // nextState[draggableId] = {
+        //     ["order"]: destination.index,
+        //     ["list_id"]: destination.droppableId
+        // }
+        // this.setState(nextState)
 
         //destination.droppableId = list id
         //draggableId = card.id
+
+        //source.index = original order of the card
+        //destination.index = new order of the card
 
         //want to get all the cards for the list id
         //want to get array of their "new" position based on index
         //want to iterate through that array and re-set their order
         //set state
+
+
 
     }
 

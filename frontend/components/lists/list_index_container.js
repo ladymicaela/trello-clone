@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
 import { openModal, openModalWithItem } from '../../actions/modal_actions';
 import ListIndex from './list_index';
-import { fetchCards } from '../../actions/card_actions';
+import { fetchCards, updateCards } from '../../actions/card_actions';
 
 import { fetchLists, destroyList } from '../../actions/list_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     return {
     lists: Object.values(state.entities.lists),
     boardId: ownProps.boardId,
-    cards: Object.values(state.entities.cards)
+    cards: state.entities.cards
 }
 };
 
@@ -18,7 +19,8 @@ const mapDispatchToProps = dispatch => ({
     openModal: modal => dispatch(openModal(modal)),
     openModalWithItem: (modal, item) => dispatch(openModalWithItem(modal, item)),
     destroyList: listId => dispatch(destroyList(listId)),
-    fetchCards: (listId) => dispatch(fetchCards(listId))
+    fetchCards: (listId) => dispatch(fetchCards(listId)),
+    updateCards: card => dispatch(updateCards(card))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ListIndex);

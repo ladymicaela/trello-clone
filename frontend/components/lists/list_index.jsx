@@ -1,4 +1,5 @@
 import React from 'react';
+import merge from 'lodash/merge'
 
 import { DragDropContext } from 'react-beautiful-dnd';
 
@@ -7,11 +8,19 @@ import ListIndexItem from './list_index_item';
 class ListIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            cards: this.props.cards,
+            lists: this.props.lists
+        }
+
+        // debugger
         this.onDragEnd = this.onDragEnd.bind(this);
+    
     }
 
+
     componentDidMount() {
-        this.props.fetchLists(this.props.boardId);
+        this.props.fetchLists(this.props.boardId); 
     }
 
     onDragEnd(result) {
@@ -28,13 +37,30 @@ class ListIndex extends React.Component {
             return;
         }
 
-        // let nextState = Object.assign({}, this.state[draggableId])
+        let nextState = merge({}, this.props.cards)
 
-        // nextState[draggableId] = {
-        //     ["order"]: destination.index,
-        //     ["list_id"]: destination.droppableId
-        // }
-        // this.setState(nextState)
+        // debugger
+
+        nextState[draggableId].order = destination.index
+        nextState[draggableId].listId = parseInt(destination.droppableId)
+
+        let cardObj = {
+            ["list_id"]: parseInt(destination.droppableId),
+            ["order"]: destination.index,
+            ["due_date"]: nextState[draggableId].dueDate,
+            ["title"]: nextState[draggableId].title,
+            ["id"]: nextState[draggableId].id,
+            ["description"]: nextState[draggableId].description
+        }
+
+
+
+        this.props.updateCards(cardObj)
+
+        // this.setState({
+        //     cards: nextState,
+        //     lists: this.props.lists
+        // })
 
         //destination.droppableId = list id
         //draggableId = card.id

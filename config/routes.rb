@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       end
       resources :lists, except: [:new, :show]
       resources :cards, except: [:new, :show]
+      patch 'cards/update_cards/:id', :to => 'cards#update_cards'
     end
 
 

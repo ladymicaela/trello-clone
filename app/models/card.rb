@@ -24,7 +24,7 @@ class Card < ApplicationRecord
     before_validation :set_order
 
     def set_order
-        self.order ||= (self.list.cards.length + 1)
+        self.order ||= (self.list.cards.length)
     end
 
 end

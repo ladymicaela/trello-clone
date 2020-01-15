@@ -28,6 +28,14 @@ export const updateCard = card => (
     })
 );
 
+export const updateCards = card => (
+    $.ajax({
+        method: 'PATCH',
+        url: `/api/cards/update_cards/${card.id}`,
+        data: {card}
+    })
+)
+
 export const destroyCard = cardId => (
     $.ajax({
         method: 'DELETE',

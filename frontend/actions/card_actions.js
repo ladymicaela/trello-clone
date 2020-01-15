@@ -58,6 +58,11 @@ export const updateCard = card => dispatch => (
         .then(card => dispatch(receiveCard(card)))
 );
 
+export const updateCards = card => dispatch => (
+    CardAPIUtil.updateCards(card)
+        .then( payload => dispatch(receiveCards(payload)))
+)
+
 export const destroyCard = cardId => dispatch => (
     CardAPIUtil.destroyCard(cardId)
         .then(() => dispatch(removeCard(cardId)))

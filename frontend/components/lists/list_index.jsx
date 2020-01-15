@@ -7,6 +7,7 @@ import ListIndexItem from './list_index_item';
 class ListIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.onDragEnd = this.onDragEnd.bind(this);
     }
 
     componentDidMount() {
@@ -14,7 +15,28 @@ class ListIndex extends React.Component {
     }
 
     onDragEnd(result) {
-        //TODO: reorder our list
+        const { destination, source, draggableId} = result;
+
+        if (!destination) {
+            return;
+        }
+
+        if (
+            destination.droppableId === source.droppableId &&
+            destination.index == source.index
+        ) {
+            return;
+        }
+
+
+        //destination.droppableId = list id
+        //draggableId = card.id
+
+        //want to get all the cards for the list id
+        //want to get array of their "new" position based on index
+        //want to iterate through that array and re-set their order
+        //set state
+
     }
 
     render() {

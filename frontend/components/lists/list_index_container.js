@@ -8,7 +8,8 @@ import { fetchLists, destroyList } from '../../actions/list_actions';
 const mapStateToProps = (state, ownProps) => {
     return {
     lists: Object.values(state.entities.lists),
-    boardId: ownProps.boardId
+    boardId: ownProps.boardId,
+    cards: Object.values(state.entities.cards)
 }
 };
 

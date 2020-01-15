@@ -24,7 +24,7 @@ class CardIndexItem extends React.Component {
 
         return(
             
-            <Draggable draggableId={`${this.props.card.id}`} index={this.props.card.order} >
+            <Draggable draggableId={`${this.props.card.id}`} index={this.props.index} >
                 {(provided) => (
                     <div className="card-index-item" 
                         ref={provided.innerRef}

@@ -24,7 +24,7 @@ class CardIndex extends React.Component {
                         <div className="card-index-container">
                             <div className="card-index-items">
                                 {
-                                    orderedCards.map(card =>
+                                    orderedCards.map((card,idx) =>
                                         <CardIndexItem
                                             card={card}
                                             key={card.id}
@@ -35,6 +35,7 @@ class CardIndex extends React.Component {
                                             listId={this.props.listId}
                                             history={this.props.history}
                                             boardId={this.props.boardId}
+                                            index={idx}
 
                                        
                                             

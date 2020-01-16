@@ -43,9 +43,9 @@ class Api::CardsController < ApplicationController
         list_drag = @card_og.list
         list_drop = card_params[:list_id].to_i
         og_order = @card_og.order
-        @cards_drag = Card.where(list_id: @card_og.list_id)
+        @cards_drag = Card.where(list_id: @card_og.list_id).order(:order)
         # debugger
-        @cards_drop = Card.where(list_id: card_params[:list_id])
+        @cards_drop = Card.where(list_id: card_params[:list_id]).order(:order)
         
         if list_drag.id != list_drop  
             @cards_drop.reverse.each do |card|
@@ -104,6 +104,13 @@ class Api::CardsController < ApplicationController
         @card = Card.find(params[:id])
         @board = Board.find(@card.list.board_id)
         if @card.destroy
+            @cards = Card.where(list_id: @card.list_id).order(:order)
+            @cards.each do |card|
+                if card.order > @card.order
+                    new_order = card.order - 1
+                    card.update(order: new_order) 
+                end                   
+            end
             render "api/boards/show"
         else
             render plain: "That card does not exist"

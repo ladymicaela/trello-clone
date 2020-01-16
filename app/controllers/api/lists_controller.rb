@@ -19,7 +19,6 @@ class Api::ListsController < ApplicationController
     end
 
     def update
-        # @list = list
         @list = List.find(params[:id])
         @board = Board.find(@list.board_id)
         if @list.update_attributes(list_params)
@@ -38,17 +37,6 @@ class Api::ListsController < ApplicationController
             render plain: "That list does not exist"
         end
     end
-
-
-    # def reorder(list)
-    #     i = list.order
-    #     board = Board.find(params[:id])
-    #     board.lists[i..-1].each do |list|
-    #         list.order -= 1
-    #         list.save
-    #     end
-    # end
-
 
     private
 

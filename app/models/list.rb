@@ -27,7 +27,7 @@ class List < ApplicationRecord
     before_validation :set_order
     
     def set_order
-        self.order ||= (self.board.lists.length + 1)
+        self.order ||= (self.board.lists.length)
     end
 
 end

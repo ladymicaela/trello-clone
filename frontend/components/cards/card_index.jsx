@@ -7,6 +7,9 @@ import CardIndexItem from './card_index_item';
 class CardIndex extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+            cards: this.props.cards
+        }
     }
 
     componentDidMount() {
@@ -17,6 +20,7 @@ class CardIndex extends React.Component {
         if (!this.props.cards) return null
 
         let orderedCards = this.props.cards.sort((a, b) => (a.order > b.order) ? 1 : -1)
+
         return (
       
                 
@@ -36,9 +40,6 @@ class CardIndex extends React.Component {
                                             history={this.props.history}
                                             boardId={this.props.boardId}
                                             index={idx}
-
-                                       
-                                            
                                             >
 
 

@@ -12,8 +12,6 @@ class ListIndex extends React.Component {
             cards: this.props.cards,
             lists: this.props.lists
         }
-
-        // debugger
         this.onDragEnd = this.onDragEnd.bind(this);
     
     }
@@ -39,8 +37,6 @@ class ListIndex extends React.Component {
 
         let nextState = merge({}, this.props.cards)
 
-        // debugger
-
         nextState[draggableId].order = destination.index
         nextState[draggableId].listId = parseInt(destination.droppableId)
 
@@ -54,32 +50,27 @@ class ListIndex extends React.Component {
         }
 
 
+    
+        this.setState(
+            {cards: {
+                draggableId: {cardObj}
+            }}
+        )
+
+   
 
         this.props.updateCards(cardObj)
-
-        // this.setState({
-        //     cards: nextState,
-        //     lists: this.props.lists
-        // })
 
         //destination.droppableId = list id
         //draggableId = card.id
 
         //source.index = original order of the card
         //destination.index = new order of the card
-
-        //want to get all the cards for the list id
-        //want to get array of their "new" position based on index
-        //want to iterate through that array and re-set their order
-        //set state
-
-
-
     }
 
     render() {
         
-        if (!this.props.lists) return null
+        if (!this.props.lists || !this.props.cards) return null
 
         let orderedLists = this.props.lists.sort((a, b) => (a.order > b.order) ? 1 : -1)
 

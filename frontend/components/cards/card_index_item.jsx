@@ -5,6 +5,7 @@ import {Draggable} from 'react-beautiful-dnd';
 class CardIndexItem extends React.Component {
     constructor(props) {
         super(props)
+
     }
 
     render() {

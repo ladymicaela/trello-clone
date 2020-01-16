@@ -8,24 +8,18 @@ import ListIndexItem from './list_index_item';
 class ListIndex extends React.Component {
     constructor(props) {
         super(props)
-        // debugger
         this.state = {...this.props}
         this.onDragEnd = this.onDragEnd.bind(this);
     
     }
 
-
-    componentDidMount() {
-        // this.props.fetchLists(this.props.boardId);
-    }
-
     componentDidUpdate(prevProps) {
         // debugger
-        if (Object.keys(prevProps.cards).length === 0) {
+       
+        if (Object.keys(prevProps.cards).length === 0 && Object.keys(this.props.cards).length !== 0) {
             this.setState(this.props)
         }
     }
-
 
     onDragEnd(result) {
         const { destination, source, draggableId} = result;
@@ -73,8 +67,6 @@ class ListIndex extends React.Component {
             }
         });
 
-        // debugger
-
         renderState[draggableId] = {
             id: parseInt(draggableId),
             title: renderState[draggableId].title,
@@ -84,11 +76,7 @@ class ListIndex extends React.Component {
             listId: endListId
         }
 
-        // debugger
-
-        this.setState({cards: renderState}, () => {
-            // debugger
-        })
+        this.setState({cards: renderState})
 
         //below is how we update DB
 
@@ -117,11 +105,11 @@ class ListIndex extends React.Component {
     }
 
     render() {
-        // debugger
         
         if (!this.props.lists) return null
-        // debugger
+
         let orderedLists = this.props.lists.sort((a, b) => (a.order > b.order) ? 1 : -1)
+
         return (
             <DragDropContext
                 onDragEnd={this.onDragEnd}>

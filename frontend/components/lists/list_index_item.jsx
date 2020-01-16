@@ -9,21 +9,15 @@ class ListIndexItem extends React.Component {
         this.state = this.props.list
         this.destroyList = this.destroyList.bind(this)
     }
-    
-    componentDidMount() {
-        // this.props.fetchCards(this.props.list.id) 
-    }
-   
+       
     destroyList() {
         this.props.destroyList(this.state.id)
             .then( () => this.props.fetchLists(this.props.boardId) )
     }
 
     render() {
-        // debugger
         
         if (!this.props.list) return null
-
 
         return(
 

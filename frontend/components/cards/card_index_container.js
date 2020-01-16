@@ -6,7 +6,6 @@ import { fetchCards, destroyCard, updateCard } from '../../actions/card_actions'
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return { 
         cards: Object.values(ownProps.cards).filter( card => 
         card.listId === ownProps.listId

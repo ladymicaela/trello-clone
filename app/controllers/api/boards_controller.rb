@@ -7,9 +7,9 @@ class Api::BoardsController < ApplicationController
         @board.creator_id = current_user.id
         if @board.save
             @membership = BoardMembership.create!(member_id: @board.creator.id, board_id: @board.id)
-            @toDo = List.create!(title: "To Do", board_id: @board.id, order: 1)
-            @inProgress = List.create!(title: "In Progress", board_id: @board.id, order: 2)
-            @done = List.create!(title: "Done", board_id: @board.id, order: 3)
+            @toDo = List.create!(title: "To Do", board_id: @board.id, order: 0)
+            @inProgress = List.create!(title: "In Progress", board_id: @board.id, order: 1)
+            @done = List.create!(title: "Done", board_id: @board.id, order: 2)
             render "api/boards/show"
         else
             render json: @board.errors.full_messages, status: 422

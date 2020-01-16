@@ -10,11 +10,9 @@ class ListIndex extends React.Component {
         super(props)
         this.state = {...this.props}
         this.onDragEnd = this.onDragEnd.bind(this);
-    
     }
 
     componentDidUpdate(prevProps) {
-        // debugger
        
         if (Object.keys(prevProps.cards).length === 0 && Object.keys(this.props.cards).length !== 0) {
             this.setState(this.props)

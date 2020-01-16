@@ -9,8 +9,9 @@ class ListIndex extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
+            lists: this.props.lists,
             cards: this.props.cards,
-            lists: this.props.lists
+            orderedLists: []
         }
         this.onDragEnd = this.onDragEnd.bind(this);
     
@@ -18,7 +19,7 @@ class ListIndex extends React.Component {
 
 
     componentDidMount() {
-        this.props.fetchLists(this.props.boardId); 
+        this.props.fetchLists(this.props.boardId);
     }
 
     onDragEnd(result) {
@@ -35,6 +36,55 @@ class ListIndex extends React.Component {
             return;
         }
 
+        //below is attempt to persist to state
+
+        let renderState = merge({}, this.props.cards)
+
+        let startListId = parseInt(source.droppableId)
+        let cardStartIndex = source.index
+
+        let endListId = parseInt(destination.droppableId)
+        let cardEndIndex = destination.index
+
+        Object.values(this.props.cards).forEach(card => {
+            if (card.listId === startListId && card.order > cardStartIndex && card.id !== draggableId) {
+                renderState[card.id] = {
+                    id: card.id,
+                    title: card.title,
+                    description: card.description,
+                    dueDate: card.dueDate,
+                    order: card.order - 1,
+                    listId: startListId
+                }
+            } else if (card.listId === endListId && card.order >= cardEndIndex && card.id !== draggableId) {
+                renderState[card.id] = {
+                    id: card.id,
+                    title: card.title,
+                    description: card.description,
+                    dueDate: card.dueDate,
+                    order: card.order + 1,
+                    listId: endListId
+                }
+            }
+        });
+
+        // debugger
+
+        renderState[draggableId] = {
+            id: parseInt(draggableId),
+            title: renderState[draggableId].title,
+            description: renderState[draggableId].description,
+            dueDate: renderState[draggableId].dueDate,
+            order: cardEndIndex,
+            listId: endListId
+        }
+
+        // debugger
+
+        this.setState(renderState)
+
+        //below is how we update DB
+
         let nextState = merge({}, this.props.cards)
 
         nextState[draggableId].order = destination.index
@@ -49,16 +99,7 @@ class ListIndex extends React.Component {
             ["description"]: nextState[draggableId].description
         }
 
-
     
-        this.setState(
-            {cards: {
-                draggableId: {cardObj}
-            }}
-        )
-
-   
-
         this.props.updateCards(cardObj)
 
         //destination.droppableId = list id

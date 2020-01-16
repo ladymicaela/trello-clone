@@ -11,7 +11,7 @@ class ListIndexItem extends React.Component {
     }
     
     componentDidMount() {
-        this.props.fetchCards(this.props.list.id)
+        this.props.fetchCards(this.props.list.id) 
     }
    
     destroyList() {

@@ -11,10 +11,13 @@ const receiveBoards = boards => ({
     boards
 });
 
-const receiveBoard = board => ({
+const receiveBoard = board => {
+    // debugger
+    return {
     type: RECEIVE_BOARD,
     board
-});
+}
+};
 
 const removeBoard = boardId => ({
     type: REMOVE_BOARD,

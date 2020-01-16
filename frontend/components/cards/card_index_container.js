@@ -6,11 +6,13 @@ import { fetchCards, destroyCard, updateCard } from '../../actions/card_actions'
 import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     return { 
-        cards: Object.values(state.entities.cards).filter( card => 
+        cards: Object.values(ownProps.cards).filter( card => 
         card.listId === ownProps.listId
     ),
-    boardId: state.entities.boards[ownProps.match.params.id]
+    boardId: state.entities.boards[ownProps.match.params.id],
+    test: state.entities.cards
 }
 };
 

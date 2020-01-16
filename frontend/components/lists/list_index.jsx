@@ -8,19 +8,24 @@ import ListIndexItem from './list_index_item';
 class ListIndex extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            lists: this.props.lists,
-            cards: this.props.cards,
-            orderedLists: []
-        }
+        // debugger
+        this.state = {...this.props}
         this.onDragEnd = this.onDragEnd.bind(this);
     
     }
 
 
     componentDidMount() {
-        this.props.fetchLists(this.props.boardId);
+        // this.props.fetchLists(this.props.boardId);
     }
+
+    componentDidUpdate(prevProps) {
+        // debugger
+        if (Object.keys(prevProps.cards).length === 0) {
+            this.setState(this.props)
+        }
+    }
+
 
     onDragEnd(result) {
         const { destination, source, draggableId} = result;
@@ -81,7 +86,9 @@ class ListIndex extends React.Component {
 
         // debugger
 
-        this.setState(renderState)
+        this.setState({cards: renderState}, () => {
+            // debugger
+        })
 
         //below is how we update DB
 
@@ -110,11 +117,11 @@ class ListIndex extends React.Component {
     }
 
     render() {
+        // debugger
         
-        if (!this.props.lists || !this.props.cards) return null
-
+        if (!this.props.lists) return null
+        // debugger
         let orderedLists = this.props.lists.sort((a, b) => (a.order > b.order) ? 1 : -1)
-
         return (
             <DragDropContext
                 onDragEnd={this.onDragEnd}>
@@ -131,6 +138,7 @@ class ListIndex extends React.Component {
                                     fetchLists={this.props.fetchLists}
                                     fetchCards={this.props.fetchCards}
                                     boardId={this.props.boardId}
+                                    cards={this.state.cards}
                                 />  
                             )
                         }

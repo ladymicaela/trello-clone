@@ -8,6 +8,7 @@ class ListForm extends React.Component {
     }
 
     handleSubmit() {
+        // debugger
         this.setState(
             {
                 ["board_id"]: this.props.boardId

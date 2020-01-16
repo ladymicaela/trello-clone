@@ -11,7 +11,7 @@ class ListIndexItem extends React.Component {
     }
     
     componentDidMount() {
-        this.props.fetchCards(this.props.list.id) 
+        // this.props.fetchCards(this.props.list.id) 
     }
    
     destroyList() {
@@ -20,9 +20,11 @@ class ListIndexItem extends React.Component {
     }
 
     render() {
+        // debugger
         
         if (!this.props.list) return null
-      
+
+
         return(
 
                 <div className="list-index-item">
@@ -42,7 +44,7 @@ class ListIndexItem extends React.Component {
                         <div ref={provided.innerRef} {...provided.droppableProps}>
                    
 
-                        <CardIndexContainer listId={this.props.list.id} />
+                        <CardIndexContainer listId={this.props.list.id} cards={this.props.cards}/>
                         {provided.placeholder}
                         </div>
                     )}

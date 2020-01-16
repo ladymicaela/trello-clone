@@ -9,7 +9,8 @@ import React from 'react';
 
 const mapStateToProps = ( state, ownProps) => ({
     board: state.entities.boards[ownProps.match.params.boardId],
-    members: Object.values(state.entities.users)
+    members: Object.values(state.entities.users),
+    cards: Object.values(state.entities.cards)
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -6,6 +6,7 @@ import { fetchCards, updateCards } from '../../actions/card_actions';
 import { fetchLists, destroyList } from '../../actions/list_actions';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     return {
     lists: Object.values(state.entities.lists),
     boardId: ownProps.boardId,

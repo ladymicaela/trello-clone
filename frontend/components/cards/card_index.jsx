@@ -13,7 +13,7 @@ class CardIndex extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchCards(this.props.listId);
+        // this.props.fetchCards(this.props.listId);
     }
 
     render() {

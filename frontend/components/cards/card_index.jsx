@@ -9,7 +9,7 @@ class CardIndex extends React.Component {
             cards: this.props.cards
         }
     }
-
+    
     render() {
         // if (!this.props.cards) return null
 

@@ -14,7 +14,8 @@ const listsReducer = ( state = {}, action ) => {
             delete nextState[action.listId];
             return nextState
         case RECEIVE_BOARD:
-            return action.board.lists
+            // return action.board.lists
+            return Object.assign({}, action.board.lists)
         case RECEIVE_BOARDS:
             return {}
         default:

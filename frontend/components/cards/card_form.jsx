@@ -5,7 +5,6 @@ class CardForm extends React.Component {
         super(props)
         this.state = this.props.card;
         this.handleSubmit = this.handleSubmit.bind(this);
-
     }
 
     handleSubmit() {

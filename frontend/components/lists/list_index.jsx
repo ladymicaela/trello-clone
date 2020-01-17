@@ -13,8 +13,12 @@ class ListIndex extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-       
-        if (Object.keys(prevProps.cards).length === 0 && Object.keys(this.props.cards).length !== 0) {
+    //    debugger
+        if (
+            (Object.keys(prevProps.cards).length === 0 && Object.keys(this.props.cards).length !== 0)
+            ||
+            (Object.keys(prevProps.cards).length !== Object.keys(this.props.cards).length)
+            ) {
             this.setState(this.props)
         }
     }

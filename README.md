@@ -1,24 +1,47 @@
-# README
+# R2DToDo
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live Demo](https://r2dtodo.herokuapp.com/)
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+R2DToDo, (a Trello clone), is a workflow management application that allows users to create and share boards that track the progress of action/todo items.
 
-* System dependencies
+## Technologies Used
 
-* Configuration
+* Backend: Ruby on Rails / PostgreSQL
 
-* Database creation
+* Frontend: React / Redux
 
-* Database initialization
+* Hosting: Heroku
 
-* How to run the test suite
+* Other libraries:
+    * [react-beautiful-dnd](https://github.com/atlassian/react-beautiful-dnd)
 
-* Services (job queues, cache servers, search engines, etc.)
+## Features
 
-* Deployment instructions
+**Boards, Lists, Cards**
 
-* ...
+A user can have mulitple boards that they create, or that are shared with them.
+
+![board index](app/assets/images/readme/board_index.png)
+
+ These Boards house lists and cards, which can be used to organize project workflows, todos, etc.
+
+ ![board show](app/assets/images/readme/board_show.png)
+
+ **Drag-and-Drop**
+
+Users can drag and drop cards between lists.
+
+ ![dnd gif](app/assets/images/readme/dnd.gif)
+
+ ## Future Updates
+
+ * Drag and Drop Lists
+    * Allow lists to be drag-and-dropped
+
+* Sharing
+    * Users can share boards with other R2DToDo users
+
+* Comments
+    * Members of a board can leave comments on cards for other board members

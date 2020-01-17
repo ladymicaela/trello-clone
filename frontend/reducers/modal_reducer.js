@@ -8,12 +8,10 @@ const modalReducer = (state = {}, action) => {
             nextState["modal"] = action.modal;
             return nextState;
         case OPEN_MODAL_WITH_ITEM:
-            // debugger
             // let nextState = {}
             // nextState["modal"] = action.modal;
             // nextState["item"] = action.openModalItem;
             // return nextState;
-            // debugger
             nextState["modal"] = action.modal;
             nextState["item"] = action.item;
             return nextState;

@@ -3,7 +3,6 @@ class Api::ListsController < ApplicationController
     before_action :require_logged_in
 
     def create
-        # debugger
         @list = List.new(list_params)
         @board = Board.find(@list.board_id)
         if @list.save

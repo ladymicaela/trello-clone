@@ -107,5 +107,10 @@
     cursor: pointer;
     display: flex;
     outline: none;
+     -webkit-transition: 0.5s;
+    transition: 0.5s;
 }
 
+.login-signup:hover {
+    background-color: goldenrod;
+}

@@ -44,7 +44,6 @@ class Api::CardsController < ApplicationController
         list_drop = card_params[:list_id].to_i
         og_order = @card_og.order
         @cards_drag = Card.where(list_id: @card_og.list_id).order(:order)
-        # debugger
         @cards_drop = Card.where(list_id: card_params[:list_id]).order(:order)
         
         if list_drag.id != list_drop  

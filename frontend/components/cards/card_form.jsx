@@ -3,7 +3,7 @@ import React from 'react';
 class CardForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = this.props.card
+        this.state = this.props.card;
         this.handleSubmit = this.handleSubmit.bind(this);
 
     }

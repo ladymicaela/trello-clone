@@ -11,7 +11,7 @@ class CardIndex extends React.Component {
     }
 
     render() {
-        if (!this.props.cards) return null
+        // if (!this.props.cards) return null
 
         let orderedCards = this.props.cards.sort((a, b) => (a.order > b.order) ? 1 : -1)
 

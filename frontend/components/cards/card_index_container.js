@@ -10,8 +10,7 @@ const mapStateToProps = (state, ownProps) => {
         cards: Object.values(ownProps.cards).filter( card => 
         card.listId === ownProps.listId
     ),
-    boardId: state.entities.boards[ownProps.match.params.id],
-    test: state.entities.cards
+    boardId: state.entities.boards[ownProps.match.params.id]
 }
 };
 

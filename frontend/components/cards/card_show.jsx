@@ -6,9 +6,9 @@ class CardShow extends React.Component {
         this.destroyCard = this.destroyCard.bind(this)
     }
 
-    componentDidMount() {
-        this.props.fetchCard(this.props.card.id)
-    }
+    // componentDidMount() {
+    //     this.props.fetchCard(this.props.card.id)
+    // }
 
     destroyCard() {
         this.props.destroyCard(this.props.card.id)

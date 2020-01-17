@@ -7,7 +7,6 @@ import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) => {
     let pathname = ownProps.location.pathname.split("/")
-    // debugger
     return {
     list: {
         title: ""
